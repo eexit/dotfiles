@@ -7,3 +7,8 @@ if test -f $completion
 then
   source $completion
 fi
+
+# Removes Git info file from autocompletion -> takes away the slowness
+__git_files () {
+    _wanted files expl 'local files' _files
+}

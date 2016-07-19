@@ -3,31 +3,117 @@
         path = ~/.gitconfig.local
 [hub]
         protocol = https
-[alias]
+[alias] # Thanks to https://gist.github.com/pksunkara/988716
+        f = fetch
+        fp = fetch --prune
+        fo = fetch origin
+        fu = fetch upstream
+        #############
+        ps = push
+        psf = push -f
+        psu = push -u
+        pso = push origin
+        psfo = push -f origin
+        psuo = push -u origin
+        #############
+        pl = pull
+        pb = pull --rebase
+        pbo = pull --rebase origin
+        pbu = pull --rebase upstream
+        #############
+        rb = rebase
+        rba = rebase --abort
+        rbc = rebase --continue
+        rbi = rebase --interactive
+        rbs = rebase --skip
+        #############
+        s = status
+        sb = status -s -b
+        #############
+        sa = stash apply
+        sc = stash clear
+        sl = stash list
+        sp = stash pop
+        ss = stash save
+        sw = stash show
+        #############
+        c = commit
+        ca = commit -a
+        cm = commit -m
+        cam = commit -am
+        #############
         co = checkout
+        cob = checkout -b
+        com = checkout master
+        #############
+        b = branch
+        ba = branch -a
+        bd = branch -d
+        br = branch -r
+        #############
+        cp = cherry-pick
+        cpn = cherry-pick -n
+        #############
+        l = log --oneline
+        lg = log --pretty=format:'%C(cyan)%h%Creset %cr | %s%d [%C(yellow)%an%Creset]' --graph --abbrev-commit --date=relative
+        #############
+        d = diff --color-words=. -w
+        dc = diff --cached
+        #############
+        ls = ls-files
+        lsf = "!git ls-files | grep -i"
+        #############
+        unstage = reset HEAD --
+        aliases = config --get-regexp alias
         promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
+        wtf = !$ZSH/bin/git-wtf
         rank-contributors = !$ZSH/bin/git-rank-contributors
-        count   = !git shortlog -sn
+        count = !git shortlog -sn
 [color]
         diff = auto
         status = auto
         branch = auto
         ui = true
+        interactive = auto
+[color "branch"]
+        current = green bold
+        local = yellow bold
+        remote = red bold
+[color "diff"]
+        meta = yellow bold
+        frag = magenta bold
+        old = red bold
+        new = green bold
+[color "status"]
+        added = green bold
+        changed = yellow bold
+        unmerged = red bold
+        untracked = magenta bold
 [core]
         excludesfile = ~/.gitignore
-        editor = vim
+        safecrlf = true
+        autocrlf = input
+        editor = sublime -w
+        ; gitProxy="ssh" for "github.com"
+        ; gitProxy=default-proxy ; for the rest
+        pager = less -r
 [apply]
         whitespace = nowarn
 [mergetool]
         keepBackup = false
+[merge]
+        tool = opendiff
 [difftool]
         prompt = false
 [help]
         autocorrect = 1
 [push]
-        # See `git help config` (search for push.default)
-        # for more information on different options of the below setting.
-        #
-        # Setting to git 2.0 default to suppress warning message
-        default = simple
+        default = current
+[pull]
+        default = current
+[receive]
+        denyDeleteCurrent = warn
+[credential]
+        helper = osxkeychain
+[url "git@github.com:"]
+        insteadOf = https://github.com/
