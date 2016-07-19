@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+cwdf=~/.cwd
+
+cd() {
+    builtin cd "$@";
+    echo "$PWD" > $cwd;
+}
+
+cwd() {
+    if test -f $cwdf
+    then
+        cd "$(cat ~/.cwd)"
+    fi
+}
+
+# Call it already!
+cwd()
