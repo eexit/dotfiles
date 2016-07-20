@@ -12,11 +12,6 @@ alias -g .....='cd ../../../..'
 alias -g ......='cd ../../../../..'
 alias -g .......='cd ../../../../../..'
 
-# List directory contents
-alias l='ls -lahG'
-alias ll='ls -lhG'
-alias la='ls -lAhG'
-
 # Always ask for confirmation before overwriting
 alias cp='cp -i'
 alias mv='mv -i'
