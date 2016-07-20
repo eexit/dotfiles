@@ -31,7 +31,7 @@ zstyle ':completion:*' special-dirs ..
 # Adds brew zsh-completions
 if test $(which brew)
 then
-    completion='$(brew --prefix)/share/zsh-completions'
+    completion=$(brew --prefix)'/share/zsh-completions'
 
     if test -d $completion
     then
