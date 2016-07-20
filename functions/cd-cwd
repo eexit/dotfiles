@@ -4,13 +4,13 @@ cwdf=~/.cwd
 
 cd() {
     builtin cd "$@";
-    echo "$PWD" > $cwd;
+    echo "$PWD" > $cwdf;
 }
 
 cwd() {
     if test -f $cwdf
     then
-        cd "$(cat ~/.cwd)"
+        cd "$(cat $cwdf)"
     fi
 }
 
