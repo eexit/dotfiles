@@ -13,8 +13,8 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 # Use AirDrop over every interface. srsly this should be a default.
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
-# Always open everything in Finder's list view. This is important.
-defaults write com.apple.Finder FXPreferredViewStyle Nlsv
+# Always open everything in Finder's column view. This is important.
+defaults write com.apple.Finder FXPreferredViewStyle clmv
 
 # Show the ~/Library folder.
 chflags nohidden ~/Library
@@ -26,16 +26,20 @@ defaults write NSGlobalDomain KeyRepeat -int 0
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
-# Run the screensaver if we're in the bottom-left hot corner.
-defaults write com.apple.dock wvous-bl-corner -int 5
+# No screensaver!
+defaults -currentHost write com.apple.screensaver idleTime 0
+
+# Gesture stuff
+defaults write com.apple.dock showAppExposeGestureEnabled -bool true
+defaults write com.apple.dock showDesktopGestureEnabled -bool true
+defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
+
+# Disable all hot corners
+defaults write com.apple.dock wvous-tl-corner -int 0
+defaults write com.apple.dock wvous-tl-modifier -int 0
+defaults write com.apple.dock wvous-bl-corner -int 0
 defaults write com.apple.dock wvous-bl-modifier -int 0
-
-# Hide Safari's bookmark bar.
-defaults write com.apple.Safari ShowFavoritesBar -bool false
-
-# Set up Safari for development.
-defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
-defaults write com.apple.Safari IncludeDevelopMenu -bool true
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
-defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+defaults write com.apple.dock wvous-tr-corner -int 0
+defaults write com.apple.dock wvous-tr-modifier -int 0
+defaults write com.apple.dock wvous-br-corner -int 0
+defaults write com.apple.dock wvous-br-modifier -int 0
