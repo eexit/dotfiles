@@ -1,9 +1,9 @@
 if [[ -n $SSH_CONNECTION ]]; then
     # hostname:path
-    export PS1='%m:%3~ %#'
+    export PS1='%m:%3~ $#'
 else
     # path
-    export PS1='%3~ %#'
+    export PS1='%3~ $#'
 fi
 
 export LSCOLORS="exfxcxdxbxegedabagacad"
