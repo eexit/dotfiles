@@ -8,11 +8,11 @@ tap 'homebrew/versions'
 
 brew 'ack'
 brew 'coreutils'
-brew 'gnu-sed --with-default-names'
-brew 'gnu-tar --with-default-names'
-brew 'gnu-which --with-default-names'
-brew 'grep --with-default-names'
-brew 'vim --override-system-vi'
+brew 'gnu-sed', args: ['--with-default-names']
+brew 'gnu-tar', args: ['--with-default-names']
+brew 'gnu-which', args: ['--with-default-names']
+brew 'grep', args: ['--with-default-names']
+brew 'vim',  args: ['--override-system-vi']
 brew 'zsh-syntax-highlighting'
 brew 'gzip'
 brew 'unrar'
@@ -39,7 +39,6 @@ brew 'docker-compose'
 brew 'node010'
 brew 'node012'
 brew 'node4-lts'
-brew 'mailcatcher'
 brew 'composer'
 brew 'php56'
 brew 'php56-http'
