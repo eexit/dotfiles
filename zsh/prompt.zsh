@@ -1,5 +1,7 @@
+pwrl="$ZSH/powerline-shell/powerline-shell-master/powerline-shell.py"
+
 powerline_precmd() {
-    export PS1="$($ZSH/powerline-shell/powerline-shell-master/powerline-shell.py $? --cwd-max-depth=5 --shell=zsh 2> /dev/null)"
+    export PS1="$($pwrl $? --cwd-max-depth=5 --shell=zsh 2> /dev/null)"
 }
 
 install_powerline_precmd() {
@@ -11,6 +13,9 @@ install_powerline_precmd() {
     precmd_functions+=(powerline_precmd)
 }
 
-if [ "$TERM" != "linux" ]; then
+if test ! -f $pwrl
+then
+    echo "You need to run dot to install the fancy prompt!"
+elif [ "$TERM" != "linux" ]; then
     install_powerline_precmd
 fi
