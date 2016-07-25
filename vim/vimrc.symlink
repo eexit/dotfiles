@@ -8,3 +8,5 @@ set shiftwidth=4
 set softtabstop=4
 set smarttab
 set expandtab
+set nocompatible
+set backspace=indent,eol,start
