@@ -101,12 +101,10 @@ setopt NO_NOMATCH
 # Prevents aliases on the command line from being internally substituted before completion is attempted
 setopt COMPLETE_ALIASES
 
-zle -N newtab
-
-bindkey '^[^[[D' backward-word
-bindkey '^[^[[C' forward-word
-bindkey '^[[5D' beginning-of-line
-bindkey '^[[5C' end-of-line
-bindkey '^[[3~' delete-char
-bindkey '^[^N' newtab
-bindkey '^?' backward-delete-char
+# Use `read` to find out a key sequence
+bindkey '^[B' backward-word # <CTRL> + <LEFT>
+bindkey '^[F' forward-word # <CTRL> + <RIGHT>
+bindkey '^[[1;5A' beginning-of-line # <CTRL> + <UP>
+bindkey '^[[1;5B' end-of-line  # <CTRL> + <DOWN>
+bindkey '^[[3~' delete-char # <FN> + <BACKSPCE>
+bindkey '^?' backward-delete-char # <DEL>
