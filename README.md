@@ -3,6 +3,8 @@
 Forked from https://github.com/holman/dotfiles.
 Cleaned and fed up to fit my needs.
 
+![screenshot.png](screenshot.png)
+
 ## install
 
 Run this:
