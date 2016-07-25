@@ -1,5 +1,7 @@
 # Z
-if (( $+commands[z] )) && (( $+commands[brew] ))
+z=`brew --prefix`/etc/profile.d/z.sh
+
+if test -f "$z"
 then
-    source `brew --prefix`/etc/profile.d/z.sh
+    source $z
 fi
