@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+dms() {
+    machine=${1:="default"}
+    (( $+commands[docker-machine-start] )) && docker-machine-start || docker-machine start $machine
+    (( $+commands[docker-env] )) && docker-env || eval "$(docker-machine env $machine)"
+}
