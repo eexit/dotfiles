@@ -2,6 +2,8 @@
 
 dms() {
     machine=${1:="default"}
-    (( $+commands[docker-machine-start] )) && docker-machine-start || docker-machine start $machine
-    (( $+commands[docker-env] )) && docker-env || eval "$(docker-machine env $machine)"
+    # See http://zsh.sourceforge.net/Doc/Release/Zsh-Modules.html#The-zsh_002fparameter-Modue
+    (( $+functions[docker-machine-start] )) && docker-machine-start || docker-machine start $machine
+    (( $+functions[docker-env] )) && docker-env || eval "$(docker-machine env $machine)"
 }
+
