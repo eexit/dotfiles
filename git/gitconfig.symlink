@@ -4,6 +4,13 @@
 [hub]
         protocol = https
 [alias] # Thanks to https://gist.github.com/pksunkara/988716
+        a = add
+        au = add --update
+        ai = add --interactive
+        aui = add --update --interactive
+        ap = add --patch
+        aup = add --update --patch
+        #############
         f = fetch
         fp = fetch --prune
         fo = fetch origin
@@ -41,6 +48,8 @@
         ca = commit -a
         cm = commit -m
         cam = commit -am
+        cd = commit --amend
+        cde = commit --amend --no-edit
         #############
         co = checkout
         cob = checkout -b
@@ -54,10 +63,11 @@
         cp = cherry-pick
         cpn = cherry-pick -n
         #############
-        l = log --oneline
-        lg = log --pretty=format:'%C(cyan)%h%Creset %cr | %s%d [%C(yellow)%an%Creset]' --graph --abbrev-commit --date=relative
+        l = log --oneline -20
+        lg = log --pretty=format:'%C(cyan)%h%Creset %cr | %s%d [%C(yellow)%an%Creset]' --graph --abbrev-commit --date=relative -n50
         #############
-        d = diff --color-words=. -w
+        d = diff
+        dw = diff --color-words=. -w
         dc = diff --cached
         #############
         ls = ls-files
