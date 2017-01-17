@@ -29,9 +29,9 @@ zstyle ':completion:*:warnings' format $'%{\e[0;31m%}No matches for:%{\e[0m%} %d
 zstyle ':completion:*' special-dirs ..
 
 # Adds brew zsh-completions
-if test $(which brew)
+if (( $+commands[brew] ))
 then
-    completion=$(brew --prefix)'/share/zsh-completions'
+    completion=`brew --prefix`/share/zsh-completions
 
     if test -d $completion
     then
