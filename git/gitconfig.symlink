@@ -43,6 +43,8 @@
         sp = stash pop
         ss = stash save
         sw = stash show
+        swn = "!f() { git stash show stash^{/$*} -p; }; f"
+        san = "!f() { git stash apply stash^{/$*}; }; f"
         #############
         c = commit
         ca = commit -a
