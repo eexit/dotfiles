@@ -31,10 +31,6 @@ zstyle ':completion:*' special-dirs ..
 # Adds brew zsh-completions
 if (( $+commands[brew] ))
 then
-    completion=`brew --prefix`/share/zsh-completions
-
-    if test -d $completion
-    then
-        fpath=($completion $fpath)
-    fi
+    fpath=("$(brew --prefix)/share/zsh-completions" $fpath)
+    fpath=("$(brew --prefix)/share/zsh/functions" $fpath)
 fi
