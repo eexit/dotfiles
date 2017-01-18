@@ -1,9 +1,0 @@
-#!/bin/zsh
-
-dms() {
-    machine=${1:="default"}
-    # See http://zsh.sourceforge.net/Doc/Release/Zsh-Modules.html#The-zsh_002fparameter-Modue
-    (( $+functions[docker-machine-start] )) && docker-machine-start || docker-machine start $machine
-    (( $+functions[docker-env] )) && docker-env || eval "$(docker-machine env $machine)"
-}
-

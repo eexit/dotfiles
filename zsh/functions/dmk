@@ -1,6 +1,0 @@
-#!/bin/zsh
-
-dmk() {
-    machine=${1:="default"}
-    docker-machine stop $machine
-}
