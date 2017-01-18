@@ -1,5 +1,5 @@
-alias reload!='. ~/.zshrc && rehash'
-alias c='clear'
+alias reload!='source ~/.zshrc; rehash'
+alias cls='clear'
 alias less='less --quiet'
 alias df='df -h'
 alias du='du -hs'
