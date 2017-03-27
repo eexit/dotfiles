@@ -129,8 +129,8 @@ defaults write -g PMPrintingExpandedStateForPrint -bool true
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
-# Disanle swipe between pages with two fingers
-defaults write -g AppleEnableSwipeNavigateWithScrolls -bool false
+# Enable swipe between pages with two fingers
+defaults write -g AppleEnableSwipeNavigateWithScrolls -bool true
 
 # Show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
