@@ -34,7 +34,8 @@
         rbi = rebase --interactive
         rbs = rebase --skip
         #############
-        s = status -sb
+        s = status
+        sb = status -sb
         #############
         sa = stash apply
         sc = stash clear
@@ -105,7 +106,7 @@
         excludesfile = ~/.gitignore
         safecrlf = true
         autocrlf = input
-        editor = sublime -w
+        editor = subl -w
         ; gitProxy="ssh" for "github.com"
         ; gitProxy=default-proxy ; for the rest
         pager = less -r
@@ -129,3 +130,8 @@
         helper = osxkeychain
 [url "git@github.com:"]
         insteadOf = https://github.com/
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
