@@ -29,6 +29,7 @@ brew 'htop'
 brew 'nethogs'
 brew 'iftop'
 brew 'trash'
+brew 'p7zip'
 
 brew 'git'
 brew 'tor'
