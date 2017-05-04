@@ -118,7 +118,7 @@ defaults write com.apple.dock showDesktopGestureEnabled -bool true
 defaults write com.apple.dock showLaunchpadGestureEnabled -bool true
 
 # Set a really fast key repeat.
-defaults write -g KeyRepeat -int 0
+defaults write -g KeyRepeat -int 2
 
 # Expand save panel by default
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
