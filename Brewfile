@@ -1,8 +1,6 @@
 cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
-tap 'homebrew/dupes'
-tap 'homebrew/versions'
 
 brew 'ack'
 brew 'coreutils'
@@ -65,3 +63,4 @@ cask 'joinme'
 cask 'rcdefaultapp'
 cask 'felony'
 cask 'docker'
+cask 'vanilla'
