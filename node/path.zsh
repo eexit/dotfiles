@@ -1,0 +1,1 @@
+export PATH=$(brew --prefix)/opt/node@4/bin:$PATH
