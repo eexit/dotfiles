@@ -1,33 +1,34 @@
 {
-    "bootstrapped": true,
-    "in_process_packages":
-    [
-    ],
-    "installed_packages":
-    [
-        "ApacheConf.tmLanguage",
-        "EditorConfig",
-        "Git Config",
-        "Github Color Theme",
-        "HTML Snippets",
-        "HTML-CSS-JS Prettify",
-        "Material Theme - Appbar",
-        "nginx",
-        "Open Folder",
-        "Package Control",
-        "Pretty JSON",
-        "Quick File Move",
-        "SSH Config",
-        "SublimeCodeIntel",
-        "SublimeLinter",
-        "SublimeLinter-jshint",
-        "SublimeLinter-json",
-        "Theme - Spacegray",
-        "TrailingSpaces",
-        "Twig"
-    ],
-    "repositories":
-    [
-        "https://github.com/andres-risso/sublime-nunjucks"
-    ]
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"ApacheConf.tmLanguage",
+		"EditorConfig",
+		"Git Config",
+		"Github Color Theme",
+		"HTML Snippets",
+		"HTML-CSS-JS Prettify",
+		"Material Theme",
+		"Material Theme - Appbar",
+		"nginx",
+		"Open Folder",
+		"Package Control",
+		"Pretty JSON",
+		"Quick File Move",
+		"SSH Config",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeLinter-jshint",
+		"SublimeLinter-json",
+		"Theme - Spacegray",
+		"TrailingSpaces",
+		"Twig"
+	],
+	"repositories":
+	[
+		"https://github.com/andres-risso/sublime-nunjucks"
+	]
 }
