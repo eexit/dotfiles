@@ -7,9 +7,21 @@ Cleaned and fed up to fit my needs.
 
 ## Installation
 
+Change you login shell first:
+
+```bash
+chsh -s $(which zsh) && exit
+```
+
+Install [Homebrew](https://brew.sh):
+
+```bash
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
 Run this:
 
-```sh
+```bash
 git clone https://github.com/eexit/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
