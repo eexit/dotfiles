@@ -30,6 +30,7 @@ brew 'trash'
 brew 'p7zip'
 
 brew 'git'
+brew 'git-lfs'
 brew 'tor'
 brew 'zsh-completions'
 brew 'go'
