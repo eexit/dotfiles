@@ -13,6 +13,7 @@
         #############
         f = fetch
         fp = fetch --prune
+        fpt = fetch --prune origin +refs/tags/*:refs/tags/*
         fo = fetch origin
         fu = fetch upstream
         #############
@@ -55,6 +56,7 @@
         #############
         co = checkout
         cob = checkout -b
+        cop = checkout -p
         com = checkout master
         #############
         b = branch
@@ -76,6 +78,7 @@
         lsf = "!git ls-files | grep -i"
         #############
         unstage = reset HEAD --
+        undo = reset HEAD~1
         aliases = config --get-regexp alias
         promote = !$ZSH/bin/git-promote
         wtf = !$ZSH/bin/git-wtf
