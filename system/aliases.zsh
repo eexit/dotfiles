@@ -6,5 +6,6 @@ then
   alias ls="gls -F --color"
   alias l="gls -lAh --color"
   alias ll="gls -lh --color"
-  alias la='gls -A --color'
+  alias la="gls -A --color"
+  alias lsd="gls --color -d */"
 fi
