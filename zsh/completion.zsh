@@ -2,6 +2,9 @@
 # Inspired by http://git.grml.org/f/grml-etc-core/etc/zsh/zshrc #
 #################################################################
 
+# don't remove space after auto-complete + | or &
+ZLE_SPACE_SUFFIX_CHARS=$'|&'
+
 # matches case insensitive for lowercase
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
