@@ -5,7 +5,7 @@
 	],
 	"installed_packages":
 	[
-		"ApacheConf.tmLanguage",
+		"ApacheConf",
 		"EditorConfig",
 		"Git Config",
 		"Github Color Theme",
