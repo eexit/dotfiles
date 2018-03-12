@@ -1,3 +1,5 @@
-histrm() {
+#!/bin/sh
+
+histrm () {
     fc -AI; LC_ALL=C sed --in-place '/$1/d' $HISTFILE
 }
