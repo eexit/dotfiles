@@ -1,0 +1,5 @@
+#!/bin/sh
+
+validate-backup () {
+    find ${1:-.} -type d -exec bash -c "cd '{}' && md5sum MD5SUMS" \;
+}
