@@ -85,6 +85,8 @@
         rank-contributors = !$ZSH/bin/git-rank-contributors
         count = !git shortlog -sn
         cbn = copy-branch-name
+        t = !sh -c 'git tag $1 && git push origin $1' -
+        deltag = !sh -c 'git tag -d $1 && git push origin :refs/tags/$1' -
 [color]
         diff = auto
         status = auto
