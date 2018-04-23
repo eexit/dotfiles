@@ -26081,9 +26081,13 @@
 	<true/>
 	<key>MaxVertically</key>
 	<false/>
+	<key>NSFontPanelAttributes</key>
+	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/.dotfiles/iterm</string>
+	<string>~/Documents</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
+	<string>{712, 448}</string>
+	<key>NSNavPanelExpandedSizeForSaveMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
@@ -26122,15 +26126,17 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>449 271 587 287 0 0 1440 877 </string>
+	<string>449 271 587 153 0 0 1440 878 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>520 397 400 129 0 0 1440 878 </string>
+	<string>487 545 400 129 0 0 1440 878 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 375 620 392 0 0 1440 878 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>181 359 770 429 0 0 1440 878 </string>
+	<string>181 372 796 473 0 0 1440 878 </string>
+	<key>NSWindow Frame UKCrashReporter</key>
+	<string>99 294 592 584 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 67 1440 811 0 0 1440 878 </string>
+	<string>155 91 1180 787 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -26878,6 +26884,8 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>AB744208-2AA7-4DAE-B25E-6332DB01D55E</string>
+	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
+	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -26956,7 +26964,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-10-25T08:42:44Z</date>
+	<date>2018-04-23T08:57:33Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -26991,6 +26999,8 @@
 	</array>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
+	<key>UKCrashReporterLastCrashReportDate</key>
+	<real>1509392384</real>
 	<key>URLHandlersByGuid</key>
 	<dict/>
 	<key>UseBorder</key>
@@ -27016,6 +27026,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.4</string>
+	<string>3.1.6</string>
 </dict>
 </plist>

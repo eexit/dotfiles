@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"ApacheConf",
+		"Dockerfile Syntax Highlighting",
 		"EditorConfig",
 		"Git Config",
 		"Github Color Theme",
@@ -18,11 +19,13 @@
 		"Package Control",
 		"Pretty JSON",
 		"Quick File Move",
+		"SCSS",
 		"SSH Config",
 		"SublimeCodeIntel",
 		"SublimeLinter",
 		"SublimeLinter-jshint",
 		"SublimeLinter-json",
+		"Terraform",
 		"Theme - Spacegray",
 		"TrailingSpaces",
 		"Twig"
