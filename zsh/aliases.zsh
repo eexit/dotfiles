@@ -5,6 +5,7 @@ alias df='df -h'
 alias du='du -hs'
 alias history='fc -il 1'
 alias hg='history | grep'
+alias g='git'
 
 # Fast directory change
 alias -g ..='cd ..'
