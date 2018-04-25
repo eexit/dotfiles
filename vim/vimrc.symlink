@@ -15,3 +15,5 @@ set autoindent
 set nowrap
 set autoread
 set number
+
+command! jsonp %!python -m json.tool
