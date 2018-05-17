@@ -1,11 +1,10 @@
-alias reload!='source ~/.zshrc; rehash'
+alias reload!='rm -rf ~/.zcomp*; source ~/.zshrc; rehash'
 alias cls='clear'
 alias less='less --quiet'
 alias df='df -h'
 alias du='du -hs'
 alias history='fc -il 1'
 alias hg='history | grep'
-alias g='git'
 
 # Fast directory change
 alias -g ..='cd ..'
