@@ -1,6 +1,5 @@
 syntax on
 
-" Wrap gitcommit file types at the appropriate length
 filetype indent plugin on
 
 set tabstop=4
@@ -16,4 +15,4 @@ set nowrap
 set autoread
 set number
 
-command! jsonp %!python -m json.tool
+command! Jsonp %!python -m json.tool
