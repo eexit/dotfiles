@@ -145,3 +145,6 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 
 # Disable power chime
 defaults write com.apple.PowerChime ChimeOnAllHardware -bool false
+
+# Disable Chrome dark mode
+defaults write com.google.Chrome NSRequiresAquaSystemAppearance -bool yes
