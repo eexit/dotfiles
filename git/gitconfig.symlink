@@ -87,6 +87,7 @@
         cbn = copy-branch-name
         t = !sh -c 'git tag $1 && git push origin $1' -
         deltag = !sh -c 'git tag -d $1 && git push origin :refs/tags/$1' -
+        cleanup = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
 [color]
         diff = auto
         status = auto
