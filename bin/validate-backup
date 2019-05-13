@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Run a custom MD5SUM to a subdirectory
+# Example: validate-backup Photo-2017
+find ${1:-.} -type d -exec bash -c "echo '{}' && cd '{}' && md5sum MD5SUMS" \;

@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if [ -d $1 ]; then
-    dir=${1%/}
-    echo "Archiving \"$dir\" -> .tbz…"
-    tar cjfv $dir.tbz $dir
-else
-    echo "ERR: $1 is not a directory"
-fi
