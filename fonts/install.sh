@@ -1,4 +1,4 @@
 #!/bin/zsh
 set -e
-
-ln -s $ZSH/fonts/* ~/Library/Fonts/
+rm -rf ~/Library/Fonts/*
+ln -s $ZSH/fonts/* ~/Library/Fonts
