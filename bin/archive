@@ -1,12 +1,12 @@
 #!/bin/sh
 
 # Usage example: find . -type d -not -name "." -exec $ZSH/zsh/functions/archive {} \;
-if [ -d $1 ]; then
-    dir="$(basename ${1%/})"
+if [ -d "$1" ]; then
+    dir=$(basename "${1%/}")
     echo "Archiving \"$dir\" -> .tbz2…"
-    tar cjv --exclude="*DS_Store" -f $dir.tbz2 $dir
+    tar cjv --exclude="*DS_Store" -f "$dir.tbz2" "$dir"
     echo "Computing the md5sum…"
-    /sbin/md5 -r $dir.tbz2 | sed 's/ /  /' >> MD5SUMS
+    /sbin/md5 -r "$dir.tbz2" | sed 's/ /  /' >> MD5SUMS
 else
     echo "ERR: $1 is not a directory"
 fi
