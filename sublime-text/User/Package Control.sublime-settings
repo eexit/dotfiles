@@ -6,12 +6,13 @@
 	"installed_packages":
 	[
 		"ApacheConf",
+		"CodeFormatter",
 		"Dockerfile Syntax Highlighting",
 		"EditorConfig",
+		"ExpandRegion",
 		"Git Config",
 		"Github Color Theme",
 		"HTML Snippets",
-		"HTML-CSS-JS Prettify",
 		"Material Theme",
 		"Material Theme - Appbar",
 		"nginx",
@@ -20,6 +21,7 @@
 		"Pretty JSON",
 		"Quick File Move",
 		"SCSS",
+		"SQLTools",
 		"SSH Config",
 		"SublimeCodeIntel",
 		"SublimeLinter",
@@ -28,7 +30,8 @@
 		"Terraform",
 		"Theme - Spacegray",
 		"TrailingSpaces",
-		"Twig"
+		"Twig",
+		"TypeScript Syntax"
 	],
 	"repositories":
 	[
