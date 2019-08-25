@@ -1,0 +1,3 @@
+#!/bin/bash
+echo -n "Un-quarantining $@"
+xattr -r -d com.apple.quarantine "$@"

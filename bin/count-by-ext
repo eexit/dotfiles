@@ -1,0 +1,10 @@
+#!/bin/sh
+# Example:
+# $ count-by-ext .
+# 4185 RAF
+# 4091 xmp
+# 2367 dng
+#    2 jpg
+#    1 DS_Store
+
+find . -type f | sed -n 's/..*\.//p' | sort | uniq -c | sort -r
