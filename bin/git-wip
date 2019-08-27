@@ -1,0 +1,3 @@
+#!/bin/sh
+
+git add --update && git commit -m "[ci skip] WIP" && git push
