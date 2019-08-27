@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# List the most CPU consuming processes
+# https://unix.stackexchange.com/a/13969/309427
+# Usage: top-cpu [count = 5]
+
+ps aux | sort -nrk 3,3 | head -n ${1:-5}
