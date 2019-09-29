@@ -1,0 +1,43 @@
+#!/bin/sh
+# Refs:
+# - https://gist.github.com/master-atul/59559fe18db69623aae7692c5481cfce
+# - https://gist.github.com/motleytech/88aaa0e574864dbc9915593ac2257f3a
+
+jmd_disable() {
+    enforceRoot
+    echo "disabling jamf..."
+    echo "" > /Library/Application\ Support/JAMF/.blacklist.xml
+    jamf flushCaches -verbose
+    mkdir /usr/local/jamf/bin/backup
+    mv /usr/local/jamf/bin/jam* /usr/local/jamf/bin/backup
+    echo "#!/bin/sh" > /usr/local/jamf/bin/jamf
+    chown root:wheel /usr/local/jamf/bin/jamf
+    chmod 555 /usr/local/jamf/bin/jamf
+    killall jamf
+    killall jamfAgent
+    echo " ok."
+}
+
+jmf_enable() {
+    enforceRoot
+    echo "enabling jamf..."
+    rm -rf /usr/local/jamf/bin/jamf
+    mv /usr/local/jamf/bin/backup/* /usr/local/jamf/bin/
+    killall jamf
+    killall jamfAgent
+    /usr/local/jamf/bin/jamf manage
+    echo " ok."
+}
+
+enforceRoot() {
+    if whoami | grep -vq "root"; then
+        echo "must run this command as root"
+        exit 1
+    fi
+}
+
+case "$1" in
+    enable)     jmf_enable ;;
+    disable)    jmd_disable ;;
+    *)          echo "Usage: sudo jmf enable|disable"; exit 1 ;;
+esac
