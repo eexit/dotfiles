@@ -19,6 +19,8 @@ Install [Homebrew](https://brew.sh):
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
+Add a Github API token for `system/env.zsh:HOMEBREW_GITHUB_API_TOKEN` env var to avoid brew to hit Github API limits.
+
 Run this:
 
 ```bash
