@@ -39,7 +39,7 @@ brew 'delve'
 brew 'jq'
 brew 'httpie'
 brew 'httping'
-brew 'node@6'
+brew 'node@8'
 brew "mysql@5.6", restart_service: true, link: true, conflicts_with: ["mysql"]
 
 cask 'arq'
@@ -54,7 +54,7 @@ cask 'iterm2'
 cask 'sequel-pro'
 cask 'messenger'
 cask 'postman'
-cask 'transmit4's
+cask 'transmit4'
 cask 'beardedspice'
 cask 'spectacle'
 cask 'alfred'
