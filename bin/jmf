@@ -3,30 +3,47 @@
 # - https://gist.github.com/master-atul/59559fe18db69623aae7692c5481cfce
 # - https://gist.github.com/motleytech/88aaa0e574864dbc9915593ac2257f3a
 
-jmd_disable() {
+bin=/usr/local/jamf/bin
+cd "$bin"
+
+ensure() {
+    [ ! -e "jamf.fake" ] && echo "#!/bin/sh" > jamf.fake || echo "jamf.fake exists"
+    [ ! -e "jamfAgent.fake" ] && echo "#!/bin/sh" > jamfAgent.fake || echo "jamfAgent.fake exists"
+    [ ! -e "jamf.ori" ] && cp jamf jamf.ori
+    [ ! -e "jamfAgent.ori" ] && cp jamfAgent jamfAgent.ori
+    mod *.fake
+}
+
+jmf_disable() {
     enforceRoot
     echo "disabling jamf..."
+    ensure
     echo "" > /Library/Application\ Support/JAMF/.blacklist.xml
     jamf flushCaches -verbose
-    mkdir /usr/local/jamf/bin/backup
-    mv /usr/local/jamf/bin/jam* /usr/local/jamf/bin/backup
-    echo "#!/bin/sh" > /usr/local/jamf/bin/jamf
-    chown root:wheel /usr/local/jamf/bin/jamf
-    chmod 555 /usr/local/jamf/bin/jamf
-    killall jamf
-    killall jamfAgent
-    echo " ok."
+    launchctl unload /Library/LaunchDaemons/com.jamf.management.daemon.plist
+    killall jamf jamfAgent
+    ln -sf "$bin/jamf.fake" "$bin/jamf"
+    ln -sf "$bin/jamfAgent.fake" "$bin/jamfAgent"
+    mod jamf jamfAgent
+    echo "ok"
 }
 
 jmf_enable() {
     enforceRoot
+    ensure
     echo "enabling jamf..."
-    rm -rf /usr/local/jamf/bin/jamf
-    mv /usr/local/jamf/bin/backup/* /usr/local/jamf/bin/
-    killall jamf
-    killall jamfAgent
-    /usr/local/jamf/bin/jamf manage
-    echo " ok."
+    killall jamf jamfAgent
+    ln -sf "$bin/jamf.ori" "$bin/jamf"
+    ln -sf "$bin/jamfAgent.ori" "$bin/jamfAgent"
+    mod jamf jamfAgent
+    launchctl load /Library/LaunchDaemons/com.jamf.management.daemon.plist
+    jamf manage
+    echo "ok"
+}
+
+mod() {
+    chown root:wheel "$@"
+    chmod 555 "$@"
 }
 
 enforceRoot() {
@@ -38,6 +55,6 @@ enforceRoot() {
 
 case "$1" in
     enable)     jmf_enable ;;
-    disable)    jmd_disable ;;
+    disable)    jmf_disable ;;
     *)          echo "Usage: sudo jmf enable|disable"; exit 1 ;;
 esac
