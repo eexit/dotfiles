@@ -39,10 +39,3 @@ do
 done
 
 unset config_files
-
-# Appends other stuff that you might not want to save on GH
-# like work scripts, etc.
-if [[ -a ~/.extrarc ]]
-then
-  source ~/.extrarc
-fi
