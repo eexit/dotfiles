@@ -39,7 +39,7 @@ brew 'delve'
 brew 'jq'
 brew 'httpie'
 brew 'httping'
-brew 'node@8'
+brew 'node@10'
 brew "mysql@5.6", restart_service: true, link: true, conflicts_with: ["mysql"]
 
 cask 'arq'
