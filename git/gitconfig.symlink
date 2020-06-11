@@ -66,6 +66,7 @@
         #############
         cp = cherry-pick
         cpn = cherry-pick -n
+        cpe = cherry-pick -e
         #############
         l = log --oneline -20
         lg = log --pretty=format:'%C(cyan)%h%Creset %cr | %s%d [%C(yellow)%an%Creset]' --graph --abbrev-commit --date=relative -n50
@@ -130,10 +131,9 @@
         default = current
 [pull]
         default = current
+        rebase = false
 [receive]
         denyDeleteCurrent = warn
-[credential]
-        helper = osxkeychain
 [url "git@github.com:"]
         insteadOf = https://github.com/
 [filter "lfs"]
