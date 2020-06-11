@@ -4,7 +4,7 @@
 	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
 	"enable_hexadecimal_encoding": false,
 	"font_face": "Monaco",
-	"font_size": 19,
+	"font_size": 20,
 	"hot_exit": false,
 	"ignored_packages":
 	[
@@ -17,6 +17,9 @@
 	],
 	"line_padding_bottom": 3,
 	"line_padding_top": 3,
+	"material_theme_accent_titlebar": true,
+	"material_theme_big_fileicons": true,
+	"material_theme_titlebar": true,
 	"material_theme_tree_headings": true,
 	"overlay_scroll_bars": "enabled",
 	"remember_open_files": false,
