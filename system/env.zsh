@@ -16,3 +16,4 @@ export PAGER="less -X"
 export EDITOR="subl -w"
 export SVN_EDITOR="subl -w"
 export TODAY=$(date '+%Y-%m-%d')
+export COMPOSER_AUTH="$(cat ~/.composer/auth.json)"
