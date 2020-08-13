@@ -1,0 +1,112 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        "key": "alt+cmd+left",
+        "command": "workbench.action.previousEditor"
+    },
+    {
+        "key": "alt+cmd+left",
+        "command": "-workbench.action.previousEditor"
+    },
+    {
+        "key": "alt+cmd+right",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "ctrl+right",
+        "command": "-workbench.action.nextEditor"
+    },
+    {
+        "key": "cmd+f12",
+        "command": "-workbench.action.gotoSymbol",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+s",
+        "command": "workbench.action.gotoSymbol"
+    },
+    {
+        "key": "alt+cmd+o",
+        "command": "-workbench.action.gotoSymbol"
+    },
+    {
+        "key": "cmd+escape",
+        "command": "workbench.action.toggleFullScreen"
+    },
+    {
+        "key": "ctrl+cmd+f",
+        "command": "-workbench.action.toggleFullScreen"
+    },
+    {
+        "key": "cmd+k",
+        "command": "-git.commitAll",
+        "when": "!inDebugMode && !terminalFocus"
+    },
+    {
+        "key": "shift+cmd+a",
+        "command": "workbench.action.toggleActivityBarVisibility"
+    },
+    {
+        "key": "cmd+numpad9",
+        "command": "-workbench.action.toggleSidebarVisibility",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "cmd+5",
+        "command": "-workbench.action.toggleSidebarVisibility",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "cmd+numpad1",
+        "command": "-workbench.action.toggleSidebarVisibility",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "cmd+numpad5",
+        "command": "-workbench.action.toggleSidebarVisibility",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "cmd+numpad3",
+        "command": "-workbench.action.toggleSidebarVisibility",
+        "when": "searchViewletVisible"
+    },
+    {
+        "key": "shift+cmd+b",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "cmd+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "shift+cmd+b",
+        "command": "-workbench.action.tasks.build"
+    },
+    {
+        "key": "alt+cmd+u",
+        "command": "editor.action.transformToUppercase"
+    },
+    {
+        "key": "alt+cmd+i",
+        "command": "editor.action.transformToLowercase"
+    },
+    {
+        "key": "alt+cmd+l",
+        "command": "-toggleFindInSelection",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+cmd+[Period]",
+        "command": "-workbench.action.splitEditor"
+    },
+    {
+        "key": "cmd+t cmd+t",
+        "command": "extension.changeCase.title"
+    },
+    {
+        "key": "cmd+down",
+        "command": "-editor.action.goToDeclaration",
+        "when": "editorHasDefinitionProvider && editorTextFocus"
+    }
+]
