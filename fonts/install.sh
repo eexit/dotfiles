@@ -1,4 +1,3 @@
 #!/bin/zsh
-set -e
-rm -rf ~/Library/Fonts/*
-ln -s $ZSH/fonts/* ~/Library/Fonts
+rm -rf ~/Library/Fonts/* || true
+cp -Rn $ZSH/fonts/* ~/Library/Fonts
