@@ -1,3 +1,4 @@
 export GOROOT=`go env GOROOT`
-export GOPATH=$HOME/Sites
+export GO111MODULE=off
+export GOPATH=$HOME/Code
 export PATH="$GOPATH/bin:$PATH"

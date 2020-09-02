@@ -6,13 +6,13 @@ code=~/Library/Application\ Support/Code/User
 
 if (( $+commands[code] ))
 then
-    cd $code
+    mkdir -p $code && cd $code
     # To generate the exentsion list: $ code --list-extensions
     while read l; do
         code --install-extension "$l"
-    done < extensions.list
-    rm -rf keybindings.json settings.json
-    ln -s $cwd/keybindings.json keybindings.json
-    ln -s $cwd/settings.json settings.json
+    done < $ZSH/vsc/extensions.list
+    rm -rf keybindings.json settings.json || true
+    ln -s $ZSH/vsc/keybindings.json keybindings.json
+    ln -s $ZSH/vsc/settings.json settings.json
     cd $cwd
 fi
