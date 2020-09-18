@@ -1,4 +1,5 @@
-alias reload!='rm -rf ~/.zcomp*; source ~/.zshrc; rehash'
+#alias reload!='rm -rf ~/.zcomp*; source ~/.zshrc; rehash'
+alias reload!='rm -rf ~/.zcomp*; exec $SHELL'
 alias cls='clear'
 alias less='less --quiet'
 alias df='df -h'

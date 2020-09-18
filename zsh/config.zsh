@@ -58,6 +58,8 @@ setopt NO_MENU_COMPLETE
 setopt IGNORE_EOF
 # Append history list to the history file rather than replace it
 setopt APPEND_HISTORY
+# Append history right after a command is typed vs dump at end of shell
+setopt INC_APPEND_HISTORY
 # Don't record an entry that was just recorded again
 setopt HIST_IGNORE_DUPS
 # Remove superfluous blanks before recording entry
