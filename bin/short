@@ -1,0 +1,2 @@
+#!/bin/bash
+[[ ! -z "$@" ]] && (gh issue create --repo eexit/s --label "cli" --title "$@" --body "" | sed -e 's/github.com\/eexit\/s\/issues/eexit.github.io\/s/g') || (echo "Forgot URL?"; exit 1)

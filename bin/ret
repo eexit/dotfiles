@@ -1,0 +1,5 @@
+#!/bin/bash
+# https://stackoverflow.com/a/58598185/1313562
+# Output anything saved in the temp file, whole file or only x last lines
+# Works with cap command
+[[ ! -z "$@" ]] && tail -n "$@" /tmp/capture.out || cat /tmp/capture.out
