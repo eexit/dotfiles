@@ -1,4 +1,5 @@
 #!/bin/bash
+# Usage $ cmd | cap
 # https://stackoverflow.com/a/58598185/1313562
 # Tees anything into a temp file. Works with ret command
 tee /tmp/capture.out

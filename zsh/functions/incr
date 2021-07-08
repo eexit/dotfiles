@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Computes the growth/decline of two number
+# Computes the growth/decline of two numbers
 # Example:
 #   $ incr 40 900 -> 2150.000000%
 #   $ incr 50.123 12.987 -> -74.089700%

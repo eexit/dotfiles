@@ -1,4 +1,5 @@
 #!/bin/bash
+# Usage $ ret
 # https://stackoverflow.com/a/58598185/1313562
 # Output anything saved in the temp file, whole file or only x last lines
 # Works with cap command
