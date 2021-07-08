@@ -6,6 +6,8 @@ alias df='df -h'
 alias du='du -hs'
 alias history='fc -il 1'
 alias hg='history | grep'
+# https://gist.github.com/mihow/9c7f559807069a03e302605691f85572
+alias envup='export $(grep -v "^#" .env | xargs)'
 
 # Fast directory change
 alias -g ..='cd ..'
@@ -22,5 +24,4 @@ alias rm='rm -i'
 
 alias dc='docker-compose'
 alias pbcopy='tr -d "\n" | /usr/bin/pbcopy'
-alias mailcatcher='mailcatcher --ip=0.0.0.0'
 alias phpdebug='PHP_IDE_CONFIG="serverName=localhost" XDEBUG_CONFIG="idekey=PHPSTORM" php -d xdebug.remote_host=localhost -d xdebug.remote_connect_back=0'
