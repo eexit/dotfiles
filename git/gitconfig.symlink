@@ -18,10 +18,12 @@
         fu = fetch upstream
         #############
         ps = push
-        psf = push -f
+        psf = push --force-with-lease
+        psff = push --force
         psu = push -u
         pso = push origin
-        psfo = push -f origin
+        psfo = push --force-with-lease origin
+        psffo = push --force origin
         psuo = push -u origin
         #############
         pl = pull
@@ -74,6 +76,7 @@
         d = diff
         dw = diff --color-words=. -w
         dc = diff --cached
+        dp = "!git diff | /usr/bin/pbcopy"
         #############
         ls = ls-files
         lsf = "!git ls-files | grep -i"
