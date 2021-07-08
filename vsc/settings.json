@@ -62,5 +62,8 @@
     "npm.fetchOnlinePackageInfo": false,
     "json.schemaDownload.enable": false,
     "diffEditor.renderSideBySide": false,
-    "json.format.enable": false
+    "json.format.enable": false,
+    "[terraform]": {
+        "editor.formatOnSave": true
+    }
 }
