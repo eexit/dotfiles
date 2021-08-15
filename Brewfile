@@ -37,7 +37,7 @@ brew 'zsh-completions'
 brew 'go'
 brew 'jq'
 brew 'httpie'
-brew 'node@12'
+brew 'node@14'
 
 cask 'arq'
 cask '1password'
