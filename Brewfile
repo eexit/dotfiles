@@ -38,7 +38,6 @@ brew 'go'
 brew 'jq'
 brew 'httpie'
 brew 'node@12'
-brew "mysql@5.6", restart_service: true, link: true, conflicts_with: ["mysql"]
 
 cask 'arq'
 cask '1password'
