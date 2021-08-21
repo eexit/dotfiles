@@ -5,11 +5,11 @@ tap 'homebrew/bundle'
 brew 'mas'
 brew 'ack'
 brew 'coreutils'
-brew 'gnu-sed', args: ['--with-default-names']
-brew 'gnu-tar', args: ['--with-default-names']
-brew 'gnu-which', args: ['--with-default-names']
-brew 'grep', args: ['--with-default-names']
-brew 'vim',  args: ['--override-system-vi']
+brew 'gnu-sed'
+brew 'gnu-tar'
+brew 'gnu-which'
+brew 'grep'
+brew 'vim'
 brew 'zsh-syntax-highlighting'
 brew 'gzip'
 brew 'unrar'
