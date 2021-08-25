@@ -5,7 +5,7 @@ dirs=(appearance features)
 
 for dir in "${dirs[@]}"
 do
-    cp -R ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/$dir $ZSH/alfred/$dir
+    cp -R ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/$dir $ZSH/alfred/
 done
 
 localdir=$(/bin/ls -1 ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/local)
@@ -20,5 +20,5 @@ dirs=(appearance features hotkey)
 
 for dir in "${dirs[@]}"
 do
-    cp -R ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/local/$localdir/$dir $ZSH/alfred/local/$dir
+    cp -R ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/local/$localdir/$dir $ZSH/alfred/local/
 done
