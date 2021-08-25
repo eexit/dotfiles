@@ -8,7 +8,7 @@ dirs=(appearance features)
 for dir in "${dirs[@]}"
 do
     rm -rf ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/$dir || true
-    ln -s $ZSH/alfred/$dir ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/$dir
+    cp -R $ZSH/alfred/$dir ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/$dir
 done
 
 if [ -d ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/local ]
@@ -30,5 +30,5 @@ dirs=(appearance features hotkey)
 
 for dir in "${dirs[@]}"
 do
-    ln -s $ZSH/alfred/local/$dir ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/local/$localdir/$dir
+    cp -R $ZSH/alfred/local/$dir ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/local/$localdir/$dir
 done
