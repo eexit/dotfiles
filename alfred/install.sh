@@ -1,6 +1,8 @@
 #!/bin/zsh
 set -e
 
+mkdir -p ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences
+
 dirs=(appearence features)
 
 for dir in "${dirs[@]}"
