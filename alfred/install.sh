@@ -13,7 +13,7 @@ done
 
 localdir=$(/bin/ls -1 ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/local)
 
-rm -rf ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/local/$localdir/*
+rm -rf ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/local/$localdir/* || true
 
 dirs=(appearence features hotkey)
 
