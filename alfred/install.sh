@@ -11,11 +11,6 @@ do
     cp -R $ZSH/alfred/$dir ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/$dir
 done
 
-if [ -d ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/local ]
-then
-
-fi
-
 if [[ ! -d ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/local ]]
 then 
     echo "Save at least 1 setting for Alfred to bootstrap pref dir, then re-run $ZSH/alfred/install.sh"
@@ -24,7 +19,10 @@ fi
 
 localdir=$(/bin/ls -1 ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/local)
 
-rm -rf ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/local/$localdir/* || true
+echo "Alfred pref dir: $localdir"
+
+rm -rf ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/local || true
+mkdir -p ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/local/$localdir
 
 dirs=(appearance features hotkey)
 
