@@ -1,6 +1,9 @@
 #!/bin/zsh
 set -e
 
+echo Killing Alfred...
+killall Alfred || true
+
 mkdir -p ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences
 
 dirs=(appearance features)
@@ -8,7 +11,7 @@ dirs=(appearance features)
 for dir in "${dirs[@]}"
 do
     rm -rf ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/$dir || true
-    cp -R $ZSH/alfred/$dir ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/$dir
+    cp -R $ZSH/alfred/$dir ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/
 done
 
 if [[ ! -d ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/local ]]
@@ -28,5 +31,8 @@ dirs=(appearance features hotkey)
 
 for dir in "${dirs[@]}"
 do
-    cp -R $ZSH/alfred/local/$dir ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/local/$localdir/$dir
+    cp -R $ZSH/alfred/local/$dir ~/Library/Application\ Support/Alfred/Alfred.alfredpreferences/preferences/local/$localdir/
 done
+
+echo Relaunching Alfred...
+open /Applications/Alfred\ 4.app
