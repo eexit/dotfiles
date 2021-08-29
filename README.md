@@ -39,7 +39,7 @@ The SSH configuration should be as following:
 
 ```bash
 chmod 600 ~/.ssh/*
-chmod 700 ~/.ssh ~/.ssh/cm_socket
-chmod 644 ~/.ssh/known_hosts ~/.ssh/*.pub
+chmod 700 ~/.ssh ~/.ssh/known_hosts ~/.ssh/cm_socket
+chmod 644 ~/.ssh/*.pub
 ```
 
