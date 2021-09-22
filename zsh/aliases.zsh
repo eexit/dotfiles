@@ -23,5 +23,6 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 alias dc='docker-compose'
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 alias pbcopy='tr -d "\n" | /usr/bin/pbcopy'
 alias phpdebug='PHP_IDE_CONFIG="serverName=localhost" XDEBUG_CONFIG="idekey=PHPSTORM" php -d xdebug.remote_host=localhost -d xdebug.remote_connect_back=0'

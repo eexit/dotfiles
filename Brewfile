@@ -84,3 +84,4 @@ mas 'Encrypto', id: 935235287
 mas 'Trello', id: 1278508951
 mas 'PDFify', id: 1435055351
 mas 'Horo', id: 1437226581
+mas 'Tailscale', id: 1475387142
