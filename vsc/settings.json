@@ -3,7 +3,6 @@
     "editor.fontLigatures": false,
     "workbench.colorTheme": "Material Theme",
     "workbench.iconTheme": "eq-material-theme-icons",
-    "window.zoomLevel": 1,
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "editor.insertSpaces": true,
@@ -32,7 +31,6 @@
     "html.format.enable": false,
     "materialTheme.accent": "Teal",
     "editor.cursorBlinking": "phase",
-    "workbench.activityBar.visible": true,
     "breadcrumbs.enabled": true,
     "workbench.editor.closeOnFileDelete": true,
     "window.openFoldersInNewWindow": "on",
@@ -62,8 +60,52 @@
     "npm.fetchOnlinePackageInfo": false,
     "json.schemaDownload.enable": false,
     "diffEditor.renderSideBySide": false,
-    "json.format.enable": false,
     "[terraform]": {
         "editor.formatOnSave": true
-    }
+    },
+    "workbench.editor.wrapTabs": true,
+    "twig-language-2.indentStyle": "space",
+    "twig-language-2.quoteConvert": "double",
+    "editor.detectIndentation": false,
+    "editor.rulers": [
+        80, 120
+    ],
+    "todohighlight.keywords": [
+     "kludge:",
+     "warn:",
+     {
+            "text": "TODO:",
+            "color": "white",
+            "backgroundColor": "crimson"
+        }
+    ],
+    "todohighlight.isCaseSensitive": false,
+    "todohighlight.exclude": [
+        "**/node_modules/**",
+        "**/bower_components/**",
+        "**/dist/**",
+        "**/vendor/**",
+        "**/build/**",
+        "**/.vscode/**",
+        "**/.github/**",
+        "**/_output/**",
+        "**/*.min.*",
+        "**/*.map",
+        "**/.next/**"
+    ],
+    "todohighlight.toggleURI": true,
+    "codesnap.backgroundColor": "",
+    "window.zoomLevel": 1,
+    "codesnap.transparentBackground": true,
+    "thunder-client.codeSnippetLanguage": "curl",
+    "intelephense.format.enable": false,
+    "[php]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "junstyle.php-cs-fixer"
+    },
+    "php-cs-fixer.lastDownload": 0,
+    "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+    "php-cs-fixer.autoFixByBracket": false,
+    "twig-language-2.formatting": false,
+    "security.workspace.trust.untrustedFiles": "open",
 }
