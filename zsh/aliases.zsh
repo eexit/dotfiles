@@ -6,6 +6,9 @@ alias df='df -h'
 alias du='du -hs'
 alias history='fc -il 1'
 alias hg='history | grep'
+alias awk='gawk'
+alias sed='gsed'
+alias which='gwhich'
 # https://gist.github.com/mihow/9c7f559807069a03e302605691f85572
 alias envup='export $(grep -v "^#" .env | xargs)'
 
