@@ -1,0 +1,13 @@
+cask_args appdir: '/Applications'
+
+tap 'homebrew/bundle'
+
+brew 'gnupg'
+brew 'php@80'
+brew 'node'
+
+cask 'figma'
+cask 'vagrant'
+cask 'dashlane'
+cask 'slack'
+cask 'notion'
