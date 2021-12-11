@@ -1,9 +1,18 @@
-gnubins=(gnu-sed gnu-tar gnu-which grep)
+gnubins=(gnu-sed gnu-tar gnu-which grep coreutils)
 
 for bin in "${gnubins[@]}"
 do
-    P="/usr/local/opt/$bin/libexec/gnubin:$P"
+    P="$(brew --prefix)/opt/$bin/libexec/gnubin:
+$P"
 done
 
-export PATH="./bin:/usr/local/bin:/usr/local/sbin:$ZSH/bin:/usr/local/opt/python/libexec/bin:/usr/local/opt/openjdk/bin:/usr/local/opt/coreutils/libexec/gnubin:${P:0:-2}:$PATH"
-export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
+export PATH="./bin:
+$ZSH/bin:
+$(brew --prefix)/bin:
+$(brew --prefix)/sbin:
+$(brew --prefix)/opt/python/libexec/bin:
+$(brew --prefix)/opt/openjdk/bin:
+${P:0:-2}:
+$PATH"
+
+export MANPATH="$(brew --prefix)/man:$(brew --prefix)/git/man:$MANPATH"

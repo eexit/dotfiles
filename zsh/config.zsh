@@ -11,6 +11,7 @@ export CLICOLOR=true
 export GPG_TTY=$(tty)
 
 fpath=($ZSH/zsh/functions $fpath)
+fpath=(`brew --prefix`/share/zsh/site-functions $fpath)
 
 autoload -U $ZSH/zsh/functions/*(:t)
 

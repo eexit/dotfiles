@@ -2,7 +2,7 @@
 set -e
 
 cwd=$(pwd)
-s3=~/Library/Application\ Support/Sublime\ Text\ 3
+s3=~/Library/Application\ Support/Sublime\ Text\
 
 if (( $+commands[subl] ))
 then
