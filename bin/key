@@ -1,0 +1,37 @@
+#!/bin/zsh
+# Requires gnu-sed!
+
+expt() {
+    cat "$1" | gsed -z 's/\n/\\n/g' | /usr/bin/pbcopy
+}
+
+import_public() {
+    echo "$2" > "$1"
+    chmod 644 "$1"
+}
+
+import_private() {
+    echo "$2" > "$1"
+    chmod 600 "$1"
+}
+
+case "$1" in
+    export)             expt "$2" ;;
+    import-public)      import_public "$2" "$3" ;;
+    import-private)     import_private "$2" "$3" ;;
+    *)
+        echo 'Usage: key export|import-public|import-private
+
+$ key export ~/.ssh/key
+
+Will put int your clipboard a one-liner string, converting all EOL into \\n.
+
+$ key import-public key.pub "key content\\nwith new lines\\n"
+
+Will create a public key.pub from given key and content.
+
+$ key import-private key "key content\\nwith new lines\\n"
+
+Will create a private key from given key and content.';
+        exit 1 ;;
+esac
