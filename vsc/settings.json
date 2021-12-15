@@ -68,18 +68,30 @@
     "twig-language-2.quoteConvert": "double",
     "editor.detectIndentation": false,
     "editor.rulers": [
-        80, 120
+        80,
+        120
     ],
     "todohighlight.keywords": [
-     "kludge:",
-     "warn:",
-     {
+        "kludge:",
+        "warn:",
+        {
             "text": "TODO:",
             "color": "white",
             "backgroundColor": "crimson"
         }
     ],
     "todohighlight.isCaseSensitive": false,
+    "todohighlight.include": [
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.html",
+        "**/*.php",
+        "**/*.css",
+        "**/*.scss",
+        "**/*.twig"
+    ],
     "todohighlight.exclude": [
         "**/node_modules/**",
         "**/bower_components/**",
@@ -108,4 +120,5 @@
     "php-cs-fixer.autoFixByBracket": false,
     "twig-language-2.formatting": false,
     "security.workspace.trust.untrustedFiles": "open",
+    "todohighlight.isEnable": true,
 }
