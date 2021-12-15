@@ -36,6 +36,7 @@ brew 'zsh-completions'
 brew 'go'
 brew 'node'
 brew 'jq'
+brew 'imagemagick'
 brew 'httpie'
 
 cask 'arq'

@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+set -e # exit on error
+################################################
+# Source: https://gist.github.com/qoomon/2e02bc51fecdd42c6c859902af5d0c0f
+#
+# Prerequisits:
+#   ensure ImageMagick is installed
+#
+# Usage:
+#   pdf2scan [--gray] files...
+#
+################################################
+if [ "$1" == "--gray" ]
+then
+  colorspace="Gray"
+  shift
+fi
+
+tilt_min=0.02
+tilt_max=0.06
+density=150
+noise=0.1
+
+for input in "$@"
+do
+
+  build_dir="$(mktemp -d "${TMPDIR:-/tmp}"/pdf2scan.XXXX)"
+  output_file="$(basename "$input" .pdf)_scan.pdf"
+
+  # process each page
+  page_count=$(identify -ping "$input" | wc -l | bc)
+  page_range="0..$(bc <<< "$page_count - 1")"
+  for (( page_index=0; page_index<$page_count; page_index++ ))
+  do
+    echo "process page $(bc <<< "$page_index + 1")/$page_count ..."
+
+    # randomize tilt
+    tilt=$(bc -l <<< "$tilt_min + ($tilt_max - $tilt_min) * ($RANDOM/32767)")
+    if [ $(($RANDOM % 2)) = 0 ]
+    then
+      tilt=-$tilt
+    fi
+
+    convert \
+      -density $density \
+      "${input}[${page_index}]" \
+      -background none \
+      -rotate $tilt \
+      -attenuate $noise \
+      +noise Multiplicative \
+      ${colorspace:+-colorspace $colorspace} \
+      -sharpen 0x1.0 \
+      "$build_dir/page_${page_index}.pdf"
+  done
+
+  # merge pages
+  echo "merge pages into '$output_file' ..."
+  IFS=$'\n' scan_pages=($(ls -1 "$build_dir/page_"* | sort -V))
+  convert \
+    -density $density \
+    -compress jpeg -quality 80 \
+    "${scan_pages[@]}" \
+    "$output_file"
+
+  echo "done!"
+done
