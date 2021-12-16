@@ -1,4 +1,4 @@
-cask_args appdir: '/Applications'
+cask_args appdir: '/Applications', greedy: true
 
 tap 'homebrew/bundle'
 
@@ -22,22 +22,24 @@ brew 'readline'
 brew 'dos2unix'
 brew 'uchardet'
 brew 'z'
-brew 'zsh'
+brew 'zsh', link: true
 brew 'bchunk'
 brew 'htop'
 brew 'nethogs'
 brew 'iftop'
 brew 'trash'
 brew 'p7zip'
-brew 'git'
+brew 'git', link: true
 brew 'tor'
 brew 'doctl'
 brew 'zsh-completions'
 brew 'go'
-brew 'node'
+brew 'node', link: true
 brew 'jq'
 brew 'imagemagick'
 brew 'httpie'
+brew 'php@8.0', link: true
+brew 'composer', args: ["--ignore-dependencies"]
 
 cask 'arq'
 cask '1password'
@@ -80,6 +82,7 @@ cask 'transnomino'
 cask 'typora'
 cask 'amazon-music'
 
+mas 'Bitwarden', id: 1352778147
 mas 'Encrypto', id: 935235287
 mas 'Trello', id: 1278508951
 mas 'PDFify', id: 1435055351

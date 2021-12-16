@@ -1,13 +1,11 @@
-cask_args appdir: '/Applications'
+cask_args appdir: '/Applications', greedy: true
 
 tap 'homebrew/bundle'
 
 brew 'gnupg'
-brew 'php@80'
-brew 'node'
+brew 'php@8.0', link: true
 
-cask 'figma'
-cask 'vagrant'
-cask 'dashlane'
 cask 'slack'
+cask 'vagrant'
+cask 'figma'
 cask 'notion'
