@@ -9,7 +9,7 @@ then
     mkdir -p $code && cd $code
     # To generate the exentsion list: $ code --list-extensions
     while read l; do
-        code --install-extension "$l"
+        code --force --install-extension "$l"
     done < $ZSH/vsc/extensions.list
     rm -rf keybindings.json settings.json || true
     ln -s $ZSH/vsc/keybindings.json keybindings.json
