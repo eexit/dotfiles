@@ -14,12 +14,12 @@ alias -g tar='gtar'
 alias envup='export $(grep -v "^#" .env | xargs)'
 
 # Fast directory change
-alias -g ..='cd ..'
-alias -g ...='cd ../..'
-alias -g ....='cd ../../..'
-alias -g .....='cd ../../../..'
-alias -g ......='cd ../../../../..'
-alias -g .......='cd ../../../../../..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias .......='cd ../../../../../..'
 
 # Always ask for confirmation before overwriting
 alias cp='cp -i'
