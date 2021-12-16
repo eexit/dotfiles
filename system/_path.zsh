@@ -6,13 +6,15 @@ do
 $P"
 done
 
-export PATH="./bin:
+PATH=$(cat <<EOL
+./bin:
 $ZSH/bin:
-$(brew --prefix)/bin:
-$(brew --prefix)/sbin:
-$(brew --prefix)/opt/python/libexec/bin:
-$(brew --prefix)/opt/openjdk/bin:
 ${P:0:-2}:
-$PATH"
+$PATH
+EOL
+)
+
+# https://unix.stackexchange.com/a/57128/309427
+export PATH=${PATH//$'\n'/}
 
 export MANPATH="$(brew --prefix)/man:$(brew --prefix)/git/man:$MANPATH"
