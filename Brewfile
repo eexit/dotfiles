@@ -1,4 +1,4 @@
-cask_args appdir: '/Applications', greedy: true
+cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
 
@@ -39,7 +39,7 @@ brew 'jq'
 brew 'imagemagick'
 brew 'httpie'
 brew 'php@8.0', link: true
-brew 'composer', args: ["--ignore-dependencies"]
+brew 'composer', args: ['--ignore-dependencies']
 
 cask 'arq'
 cask '1password'
