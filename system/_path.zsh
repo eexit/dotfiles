@@ -9,6 +9,7 @@ done
 PATH=$(cat <<EOL
 ./bin:
 $ZSH/bin:
+/opt/homebrew/bin:
 ${P:0:-2}:
 $PATH
 EOL
