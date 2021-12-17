@@ -1,0 +1,45 @@
+// Use https://finicky-kickstart.now.sh to generate basic configuration
+// Learn more about configuration options: https://github.com/johnste/finicky/wiki/Configuration
+// Get Chrome current profile ID: open chrome://version
+module.exports = {
+    defaultBrowser: "Google Chrome",
+    handlers: [
+        {
+            // Apps that should open links in my professional browser profile
+            match: ({ opener }) =>
+                [
+                    "Slack",
+                    "Gmail",
+                    "Google Calendar",
+                    "Dashlane",
+                    "Beepkeeper Studio",
+                    "Notion",
+                    "Figma",
+                ].includes(opener.name),
+                browser: {
+                    name: "Google Chrome",
+                    profile: "Profile 1",
+                }
+        },
+        {
+            // Apps that should open links in my personal browser profile
+            match: ({ opener }) =>
+                [
+                    "Arq",
+                    "Messages",
+                    "1Password",
+                    "Amazon Music",
+                    "Dropbox",
+                    "Signal",
+                    "Transmission",
+                    "Trello",
+                    "VLC",
+                    "Onyx"
+                ].includes(opener.name),
+                browser: {
+                    name: "Google Chrome",
+                    profile: "Profile 2",
+                }
+        },
+    ]
+}
