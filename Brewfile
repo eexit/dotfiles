@@ -39,7 +39,7 @@ brew 'jq'
 brew 'imagemagick'
 brew 'httpie'
 brew 'php@8.0', link: true
-brew 'composer', args: ['--ignore-dependencies']
+brew 'composer', args: ['ignore-dependencies']
 
 cask 'arq'
 cask '1password'
