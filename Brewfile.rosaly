@@ -1,4 +1,4 @@
-cask_args appdir: '/Applications', greedy: true
+cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
 
@@ -9,3 +9,4 @@ cask 'slack'
 cask 'vagrant'
 cask 'figma'
 cask 'notion'
+cask 'beekeeper-studio'
