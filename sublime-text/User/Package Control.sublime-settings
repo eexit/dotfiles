@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
 		"ApacheConf",
 		"CodeFormatter",
 		"Dockerfile Syntax Highlighting",
@@ -32,7 +33,7 @@
 		"Theme - Spacegray",
 		"TrailingSpaces",
 		"Twig",
-		"TypeScript Syntax"
+		"TypeScript Syntax",
 	],
 	"repositories":
 	[
