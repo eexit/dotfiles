@@ -9,6 +9,7 @@ alias hg='history | grep'
 alias -g awk='gawk'
 alias -g sed='gsed'
 alias -g which='gwhich'
+alias -g grep='ggrep'
 alias -g tar='gtar'
 # https://gist.github.com/mihow/9c7f559807069a03e302605691f85572
 alias envup='export $(grep -v "^#" .env | xargs)'

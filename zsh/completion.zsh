@@ -34,6 +34,7 @@ zstyle ':completion:*' special-dirs ..
 # Adds brew zsh-completions
 if (( $+commands[brew] ))
 then
-    fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
+    # This one must be called before the prompt so I moved it into prompt.zsh
+    # fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
     fpath=("$(brew --prefix)/share/zsh-completions" $fpath)
 fi
