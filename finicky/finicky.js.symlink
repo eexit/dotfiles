@@ -1,13 +1,41 @@
 // Use https://finicky-kickstart.now.sh to generate basic configuration
 // Learn more about configuration options: https://github.com/johnste/finicky/wiki/Configuration
 // Get Chrome current profile ID: open chrome://version
+
+function pathChecker(apps, path) {
+    for (const app of apps) {
+        if (path.startsWith("/Applications/"+app)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+const brave = {
+    name: "Brave Browser",
+    profile: "Default",
+};
+
+const chrome = {
+    name: "Google Chrome",
+    profile: "Default",
+};
+
 module.exports = {
-    defaultBrowser: "Google Chrome",
+    // defaultBrowser: chrome.name,
+    defaultBrowser: brave.name,
     handlers: [
+        // Debugging purposes
+        {
+            match(all) {
+                finicky.log(JSON.stringify(all, null, 2));
+                return false
+            },
+            browser: null
+        },
         {
             // Apps that should open links in my professional browser profile
-            match: ({ opener }) =>
-                [
+            match: ({ opener }) => opener.path && pathChecker([
                     "Slack",
                     "Gmail",
                     "Google Calendar",
@@ -15,31 +43,33 @@ module.exports = {
                     "Beepkeeper Studio",
                     "Notion",
                     "Figma",
-                ].includes(opener.name),
-                browser: {
-                    name: "Google Chrome",
-                    profile: "Profile 1",
-                }
+                ], opener.path),
+                browser: chrome
+        },
+        // Picard uses osascripts to initiate link opening
+        {
+            match: "*musicbrainz.org*",
+            browser: brave
         },
         {
             // Apps that should open links in my personal browser profile
-            match: ({ opener }) =>
-                [
+            match: ({ opener }) => opener.path && pathChecker([
                     "Arq",
                     "Messages",
-                    "1Password",
                     "Amazon Music",
                     "Dropbox",
                     "Signal",
                     "Transmission",
+                    "Google Keep",
+                    "YouTube Music",
                     "Trello",
                     "VLC",
-                    "Onyx"
-                ].includes(opener.name),
-                browser: {
-                    name: "Google Chrome",
-                    profile: "Profile 2",
-                }
+                    "Twitter",
+                    "Onyx",
+                    "iBroadcast",
+                    "Bitwarden"
+                ], opener.path),
+                browser: brave
         },
     ]
 }
