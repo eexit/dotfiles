@@ -22,6 +22,7 @@ brew 'readline'
 brew 'dos2unix'
 brew 'uchardet'
 brew 'z'
+brew 'thefuck'
 brew 'zsh', link: true
 brew 'bchunk'
 brew 'htop'
