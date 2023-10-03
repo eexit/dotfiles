@@ -4,7 +4,7 @@
 
 function pathChecker(apps, path) {
     for (const app of apps) {
-        if (path.startsWith("/Applications/"+app)) {
+        if (path.startsWith("/Applications/" + app)) {
             return true;
         }
     }
@@ -14,16 +14,18 @@ function pathChecker(apps, path) {
 const brave = {
     name: "Brave Browser",
     profile: "Default",
+    // openInBackground: false,
 };
 
 const chrome = {
     name: "Google Chrome",
     profile: "Default",
+    // openInBackground: false,
 };
 
 module.exports = {
-    // defaultBrowser: chrome.name,
-    defaultBrowser: brave.name,
+    defaultBrowser: chrome.name,
+    // defaultBrowser: brave.name,
     handlers: [
         // Debugging purposes
         {
@@ -36,40 +38,59 @@ module.exports = {
         {
             // Apps that should open links in my professional browser profile
             match: ({ opener }) => opener.path && pathChecker([
-                    "Slack",
-                    "Gmail",
-                    "Google Calendar",
-                    "Dashlane",
-                    "Beepkeeper Studio",
-                    "Notion",
-                    "Figma",
-                ], opener.path),
-                browser: chrome
+                "Slack",
+                "Gmail",
+                "Google Calendar",
+                "Dashlane",
+                "Beepkeeper Studio",
+                "Notion",
+                "Figma",
+            ], opener.path),
+            browser: chrome
         },
         // Picard uses osascripts to initiate link opening
         {
             match: "*musicbrainz.org*",
             browser: brave
         },
+        // NVIDIA GeForce NOW has no opener data
+        {
+            match: "*nvidia*",
+            browser: brave
+        },
+        // Docker app has no opener data
+        {
+            match: "*docker*",
+            browser: brave
+        },
+        {
+            match: "https://www.figma.com/file/*",
+            browser: "Figma",
+        },
         {
             // Apps that should open links in my personal browser profile
             match: ({ opener }) => opener.path && pathChecker([
-                    "Arq",
-                    "Messages",
-                    "Amazon Music",
-                    "Dropbox",
-                    "Signal",
-                    "Transmission",
-                    "Google Keep",
-                    "YouTube Music",
-                    "Trello",
-                    "VLC",
-                    "Twitter",
-                    "Onyx",
-                    "iBroadcast",
-                    "Bitwarden"
-                ], opener.path),
-                browser: brave
+                "Arq",
+                "Messages",
+                "Discord",
+                "Amazon Music",
+                "Amazon Photos",
+                "Dropbox",
+                "Signal",
+                "Transmission",
+                "Google Keep",
+                "Google Messages",
+                "YouTube Music",
+                "Messenger",
+                "Trello",
+                "VLC",
+                "Twitter",
+                "Onyx",
+                "iBroadcast",
+                "Bitwarden",
+                "WhatsApp"
+            ], opener.path),
+            browser: brave
         },
     ]
 }
