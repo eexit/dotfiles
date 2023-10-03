@@ -26068,7 +26068,7 @@
 	<key>HotkeyModifiers</key>
 	<integer>0</integer>
 	<key>IRMemory</key>
-	<integer>4</integer>
+	<integer>16</integer>
 	<key>JobName</key>
 	<true/>
 	<key>LeftCommand</key>
@@ -27656,7 +27656,7 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>ShowPaneTitles</key>
