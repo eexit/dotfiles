@@ -20,11 +20,11 @@
         ps = push
         psf = push --force-with-lease
         psff = push --force
-        psu = push -u
+        psu = push --set-upstream
         pso = push origin
         psfo = push --force-with-lease origin
         psffo = push --force origin
-        psuo = push -u origin
+        psuo = push --set-upstream origin
         #############
         pl = pull
         pb = pull --rebase
@@ -38,7 +38,7 @@
         rbs = rebase --skip
         #############
         s = status
-        sb = status -sb
+        sb = status --short --branch
         #############
         sa = stash apply
         sc = stash clear
@@ -46,29 +46,29 @@
         sp = stash pop
         ss = stash save
         sw = stash show
-        swn = "!f() { git stash show stash@{$1} -p; }; f"
+        swn = "!f() { git stash show stash@{$1} --patch; }; f"
         san = "!f() { git stash apply stash@{$1}; }; f"
         #############
         c = commit
-        ca = commit -a
-        cm = commit -m
-        cam = commit -am
+        ca = commit --all
+        cm = commit --message
+        cam = commit --all --message
         cd = commit --amend
         cde = commit --amend --no-edit
         #############
         co = checkout
         cob = checkout -b
-        cop = checkout -p
+        cop = checkout --patch
         com = checkout master
         #############
         b = branch
-        ba = branch -a
-        bd = branch -d
-        br = branch -r
+        ba = branch --all
+        bd = branch --delete
+        br = branch --remotes
         #############
         cp = cherry-pick
-        cpn = cherry-pick -n
-        cpe = cherry-pick -e
+        cpn = cherry-pick --no-commit
+        cpe = cherry-pick --edit
         #############
         l = log --oneline -20
         lg = log --pretty=format:'%C(cyan)%h%Creset %cr | %s%d [%C(yellow)%an%Creset]' --graph --abbrev-commit --date=relative -n50
@@ -76,7 +76,7 @@
         d = diff
         dw = diff --color-words=. -w
         dc = diff --cached
-        dp = "!git diff | /usr/bin/pbcopy"
+        dp = "!git diff $1 | /usr/bin/pbcopy"
         #############
         ls = ls-files
         lsf = "!git ls-files | grep -i"
@@ -87,11 +87,11 @@
         promote = !$ZSH/bin/git-promote
         wtf = !$ZSH/bin/git-wtf
         rank-contributors = !$ZSH/bin/git-rank-contributors
-        count = !git shortlog -sn
+        count = !git shortlog --summary --numbered
         cbn = copy-branch-name
         t = !sh -c 'git tag $1 && git push origin $1' -
-        deltag = !sh -c 'git tag -d $1 && git push origin :refs/tags/$1' -
-        cleanup = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
+        deltag = !sh -c 'git tag --delete $1 && git push origin :refs/tags/$1' -
+        cleanup = "!f() { git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done; }; f"
 [color]
         diff = auto
         status = auto
@@ -116,7 +116,7 @@
         excludesfile = ~/.gitignore
         safecrlf = true
         autocrlf = input
-        editor = subl -w
+        editor = vim
         ; gitProxy="ssh" for "github.com"
         ; gitProxy=default-proxy ; for the rest
         pager = less -r
