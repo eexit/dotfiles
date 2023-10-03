@@ -28,5 +28,11 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 alias dc='docker-compose'
-alias pbcopy='tr -d "\n" | /usr/bin/pbcopy'
+# alias pbcopy='tr -d "\n" | /usr/bin/pbcopy'
 alias phpdebug='PHP_IDE_CONFIG="serverName=localhost" XDEBUG_CONFIG="idekey=PHPSTORM" php -d xdebug.remote_host=localhost -d xdebug.remote_connect_back=0'
+
+
+alias list-instances="aws ec2 describe-instances \
+--filter \"Name=instance-state-name,Values=running\" \
+--query \"Reservations[*].Instances[*].[PrivateIpAddress, Tags[?Key=='Name'].Value|[0]]\" \
+--output text"
