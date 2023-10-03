@@ -9,6 +9,10 @@ done
 PATH=$(cat <<EOL
 ./bin:
 $ZSH/bin:
+/usr/local/vanta:
+/opt/homebrew/opt/openjdk@11/bin:
+/opt/homebrew/share/android-commandlinetools/platform-tools:
+/opt/homebrew/share/android-commandlinetools/emulator:
 ${P:0:-2}:
 $PATH
 EOL
