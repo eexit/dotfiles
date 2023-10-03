@@ -1,5 +1,0 @@
-*.cache
-*.last-run
-*ca-bundle
-SublimeLinter/
-*crt
