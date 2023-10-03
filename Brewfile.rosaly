@@ -3,7 +3,9 @@ cask_args appdir: '/Applications'
 tap 'homebrew/bundle'
 
 brew 'gnupg'
-brew 'php@8.0', link: true
+brew 'awscli'
+brew 'awsume'
+brew 'php@8.1', link: true
 
 cask 'slack'
 cask 'vagrant'

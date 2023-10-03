@@ -31,19 +31,15 @@ brew 'iftop'
 brew 'trash'
 brew 'p7zip'
 brew 'git', link: true
-brew 'tor'
-brew 'doctl'
 brew 'zsh-completions'
 brew 'go'
 brew 'node', link: true
 brew 'jq'
-brew 'imagemagick'
 brew 'httpie'
-brew 'php@8.0', link: true
+brew 'php@8.1', link: true
 brew 'composer', args: ['ignore-dependencies']
 
 cask 'arq'
-cask '1password'
 cask 'finicky'
 cask 'google-chrome'
 cask 'google-drive'
@@ -51,41 +47,27 @@ cask 'transmission'
 cask 'vlc'
 cask 'sublime-text'
 cask 'iterm2'
-#cask 'sequel-ace'
 cask 'rectangle'
 cask 'alfred'
 cask 'appcleaner'
 cask 'onyx'
-#cask 'ocenaudio'
 cask 'monolingual'
 cask 'swiftdefaultappsprefpane'
 cask 'docker'
-#cask 'vanilla'
-cask 'phpstorm'
-cask 'dropbox'
-#cask 'balenaetcher'
-#cask 'caption'
-#cask 'db-browser-for-sqlite'
-#cask 'another-redis-desktop-manager'
 cask 'imageoptim'
-cask 'grammarly'
 cask 'kap'
-cask 'invisiblix'
-#cask 'prefs-editor'
 cask 'visual-studio-code'
-#cask 'keybase'
 cask 'boop'
-cask 'insomnia'
 cask 'muzzle'
 cask 'signal'
 cask 'skitch'
 cask 'transnomino'
-cask 'typora'
 cask 'amazon-music'
+cask 'whatsapp'
 
 mas 'Bitwarden', id: 1352778147
 mas 'Encrypto', id: 935235287
-mas 'Trello', id: 1278508951
-mas 'PDFify', id: 1435055351
-mas 'Horo', id: 1437226581
+mas 'Cyberduck', id: 409222199
 mas 'Tailscale', id: 1475387142
+mas 'Twitter', id: 1482454543
+mas 'HextEdit', id: 1557247094
