@@ -20,6 +20,8 @@ EOL
 
 # https://unix.stackexchange.com/a/57128/309427
 export PATH=${PATH//$'\n'/}
-export PATH="/opt/homebrew/sbin:$PATH"
+export PATH="$(brew --prefix)/sbin:$PATH"
+# For Python bins
+export PATH="$(brew --prefix)/opt/python@3.11/libexec/bin:$PATH"
 
 export MANPATH="$(brew --prefix)/man:$(brew --prefix)/git/man:$MANPATH"
