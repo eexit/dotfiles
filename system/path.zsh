@@ -24,4 +24,7 @@ export PATH="$(brew --prefix)/sbin:$PATH"
 # For Python bins
 export PATH="$(brew --prefix)/opt/python@3.11/libexec/bin:$PATH"
 
+# For PostgreSQL bins
+export PATH="/Applications/Postgres.app/Contents/Versions/16/bin:$PATH"
+
 export MANPATH="$(brew --prefix)/man:$(brew --prefix)/git/man:$MANPATH"
