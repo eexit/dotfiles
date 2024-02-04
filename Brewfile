@@ -42,6 +42,7 @@ brew 'composer', args: ['ignore-dependencies']
 cask 'arq'
 cask 'finicky'
 cask 'google-chrome'
+cask 'firefox'
 cask 'google-drive'
 cask 'transmission'
 cask 'vlc'
