@@ -127,10 +127,10 @@
     "editor.guides.bracketPairsHorizontal": false,
     "editor.guides.highlightActiveBracketPair": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "phpstan.suppressTimeoutMessage": true,
     "files.associations": {
         "*.twig": "twig",
-        "*.neon": "yaml"
+        "*.neon": "yaml",
+        "*.module": "php"
     },
     "colorize.languages": [
         "css",
@@ -167,7 +167,6 @@
     "debug.console.fontSize": 16,
     "window.zoomLevel": 1,
     "tabnine.experimentalAutoImports": true,
-    "php.validate.executablePath": "/opt/homebrew/bin/php",
     "intelephense.trace.server": "messages",
     "intelephense.format.enable": false,
     "php-cs-fixer.lastDownload": 0,
@@ -176,5 +175,28 @@
         "editor.defaultFormatter": "junstyle.php-cs-fixer"
     },
     "php-cs-fixer.onsave": true,
-    "php-cs-fixer.autoFixByBracket": false
+    "php-cs-fixer.autoFixByBracket": false,
+    "php.validate.executablePath": "/opt/homebrew/bin/php",
+    "php.suggest.basic": false,
+    "window.commandCenter": false,
+    "workbench.layoutControl.enabled": false,
+    "intelephense.files.exclude": [
+        "**/.git/**",
+        "**/.svn/**",
+        "**/.hg/**",
+        "**/CVS/**",
+        "**/.DS_Store/**",
+        "**/node_modules/**",
+        "**/bower_components/**",
+        "**/vendor/**/{Test,test,Tests,tests}/**/*Test.php",
+        "**/.history/**",
+        "**/vendor/**/vendor/**"
+    ],
+    "emmet.includeLanguages": {
+        "twig": "html"
+    },
+    "search.useIgnoreFiles": false,
+    "phpstan.suppressTimeoutMessage": true,
+    "phpstan.showProgress": true,
+    "breadcrumbs.filePath": "off",
 }
