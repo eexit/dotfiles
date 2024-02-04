@@ -36,7 +36,7 @@ brew 'go'
 brew 'node', link: true
 brew 'jq'
 brew 'httpie'
-brew 'php@8.1', link: true
+brew 'php@8.2', link: true
 brew 'composer', args: ['ignore-dependencies']
 
 cask 'arq'
