@@ -1,2 +1,3 @@
 git/gitconfig.local.symlink
 powerline-shell/powerline-shell-master
+Brewfile**.lock.json
