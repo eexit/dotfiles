@@ -25955,12 +25955,34 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
+		<key>0xf700-0x380000-0x7e</key>
+		<dict>
+			<key>Action</key>
+			<integer>31</integer>
+			<key>Label</key>
+			<string></string>
+			<key>Text</key>
+			<string></string>
+			<key>Version</key>
+			<integer>1</integer>
+		</dict>
 		<key>0xf701-0x300000</key>
 		<dict>
 			<key>Action</key>
 			<integer>6</integer>
 			<key>Text</key>
 			<string></string>
+		</dict>
+		<key>0xf701-0x380000-0x7d</key>
+		<dict>
+			<key>Action</key>
+			<integer>30</integer>
+			<key>Label</key>
+			<string></string>
+			<key>Text</key>
+			<string></string>
+			<key>Version</key>
+			<integer>1</integer>
 		</dict>
 		<key>0xf702-0x240000</key>
 		<dict>
