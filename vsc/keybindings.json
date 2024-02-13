@@ -223,5 +223,9 @@
     {
         "key": "shift+cmd+e",
         "command": "workbench.files.action.showActiveFileInExplorer"
+    },
+    {
+        "key": "cmd+s",
+        "command": "-workbench.action.files.saveAll"
     }
 ]
