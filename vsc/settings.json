@@ -104,7 +104,7 @@
     "twig-language-2.formatting": false,
     "security.workspace.trust.untrustedFiles": "open",
     "todohighlight.isEnable": true,
-    "intelephense.environment.phpVersion": "8.1.0",
+    "intelephense.environment.phpVersion": "8.3",
     "editor.hover.delay": 600,
     "references.preferredLocation": "view",
     "keyboard.touchbar.enabled": false,
@@ -122,7 +122,6 @@
     "xmlTools.splitXmlnsOnFormat": false,
     "materialTheme.accent": "Teal",
     "workbench.colorTheme": "Material Theme",
-    "editor.bracketPairColorization.enabled": false,
     "editor.guides.bracketPairs": true,
     "editor.guides.bracketPairsHorizontal": false,
     "editor.guides.highlightActiveBracketPair": true,
@@ -174,7 +173,6 @@
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "junstyle.php-cs-fixer"
     },
-    "php-cs-fixer.onsave": true,
     "php-cs-fixer.autoFixByBracket": false,
     "php.validate.executablePath": "/opt/homebrew/bin/php",
     "php.suggest.basic": false,
@@ -198,5 +196,12 @@
     "search.useIgnoreFiles": false,
     "phpstan.suppressTimeoutMessage": true,
     "phpstan.showProgress": true,
-    "breadcrumbs.filePath": "off",
+    "php-cs-fixer.onsave": true,
+    "php-cs-fixer.rules": "",
+    "php-cs-fixer.executablePath": "${workspaceFolder}/tools/php-cs-fixer/vendor/bin/php-cs-fixer",
+    "php.debug.ideKey": "IDEKEY",
+    "editor.bracketPairColorization.enabled": false,
+    "phpstan.binPath": "${workspaceFolder}/tools/phpstan/vendor/bin/phpstan",
+    "phpstan.configFile": "${workspaceFolder}/php/phpstan.neon,${workspaceFolder}/php/phpstan.neon.dist,${workspaceFolder}/php/phpstan.dist.neon",
+    "accessibility.voice.speechLanguage": "fr-FR"
 }
