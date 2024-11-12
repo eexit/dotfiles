@@ -19,7 +19,7 @@ const work = {
 
 const perso = {
     name: "Brave Browser",
-    profile: "Profile 2",
+    profile: "Profile 1",
     // openInBackground: false,
 };
 
