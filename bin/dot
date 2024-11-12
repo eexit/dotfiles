@@ -12,7 +12,7 @@ $ZSH/macos/set-defaults.sh
 
 # Upgrade homebrew
 echo "› brew update"
-brew update
+$(which brew) update
 
 # Install software
 echo "› $ZSH/script/install"
