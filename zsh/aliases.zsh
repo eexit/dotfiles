@@ -27,6 +27,9 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
+# Tweaked ls to be more human friendly, colorful and with hyperlinks (if supported by the terminal)
+alias ls='ls -h --hyperlink=always --color=auto'
+
 alias dc='docker compose'
 # alias pbcopy='tr -d "\n" | /usr/bin/pbcopy'
 #alias phpdebug='PHP_IDE_CONFIG="serverName=localhost" XDEBUG_CONFIG="idekey=PHPSTORM" php -d xdebug.remote_host=localhost -d xdebug.remote_connect_back=0'
@@ -36,3 +39,6 @@ alias list-instances="aws ec2 describe-instances \
 --filter \"Name=instance-state-name,Values=running\" \
 --query \"Reservations[*].Instances[*].[PrivateIpAddress, Tags[?Key=='Name'].Value|[0]]\" \
 --output text"
+
+alias cc="$(which rm) -rf ./php/var/* ./tools/phpstan/cache ./.php-cs-fixer.cache ./.prettier.cache ./front-react/node_modules ./front/node_modules ||:"
+alias reinstall-tools="find tools/php* \( -name vendor -or -name composer.lock \) -exec rm -rf {} + && composer i -d tools/phpstan && composer i -d tools/php-cs-fixer"
