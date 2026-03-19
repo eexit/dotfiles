@@ -105,9 +105,9 @@ setopt NO_NOMATCH
 setopt COMPLETE_ALIASES
 
 # Use `read` to find out a key sequence
-bindkey '^[[1;9D' backward-word # <OPT> + <LEFT>
-bindkey '^[[1;9C' forward-word # <OTP> + <RIGHT>
-bindkey '^[[1;9A' beginning-of-line # <OPT> + <UP>
-bindkey '^[[1;9B' end-of-line  # <OPT> + <DOWN>
+bindkey '^[[1;3D' backward-word # <OPT> + <LEFT>
+bindkey '^[[1;3C' forward-word # <OTP> + <RIGHT>
+bindkey '^[[1;3A' beginning-of-line # <OPT> + <UP>
+bindkey '^[[1;3B' end-of-line  # <OPT> + <DOWN>
 bindkey '^[[3~' delete-char # <FN> + <BACKSPCE>
 bindkey '^?' backward-delete-char # <DEL>
