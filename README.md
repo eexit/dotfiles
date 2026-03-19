@@ -7,21 +7,15 @@ Cleaned and fed up to fit my needs.
 
 ## Installation
 
-Change you login shell first:
+Make sure you already use ZSH, otherwise:
 
 ```bash
 chsh -s $(which zsh) && exit
 ```
 
-Install [Homebrew](https://brew.sh):
-
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-```
-
-Add a Github API token for `HOMEBREW_GITHUB_API_TOKEN` env var to avoid brew to hit Github API limits in `~/.localrc`
-
-Run this:
+1. Install [Homebrew](https://brew.sh) and 
+2. [Generate](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and [add a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+3. Add the composer token: ` composer config --global github-oauth.github.com {token}`
 
 ```bash
 git clone https://github.com/eexit/dotfiles.git ~/.dotfiles
@@ -42,4 +36,3 @@ chmod 600 ~/.ssh/*
 chmod 700 ~/.ssh ~/.ssh/known_hosts ~/.ssh/cm_socket
 chmod 644 ~/.ssh/*.pub
 ```
-
