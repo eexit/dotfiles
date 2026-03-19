@@ -1,10 +1,20 @@
+// @ts-check
+
+/**
+ * @typedef {import('/Applications/Finicky.app/Contents/Resources/finicky.d.ts').FinickyConfig} FinickyConfig
+ */
+
 // Use https://finicky-kickstart.now.sh to generate basic configuration
 // Learn more about configuration options: https://github.com/johnste/finicky/wiki/Configuration
 // Get Chrome current profile ID: open chrome://version
 
-function pathChecker(apps, path) {
+function pathChecker(apps, options) {
+    if (!options.opener || !options.opener.path) {
+        return false;
+    }
+
     for (const app of apps) {
-        if (path.startsWith("/Applications/" + app)) {
+        if (options.opener.path.startsWith("/Applications/" + app)) {
             return true;
         }
     }
@@ -14,54 +24,66 @@ function pathChecker(apps, path) {
 const work = {
     name: "Brave Browser",
     profile: "Default",
-    // openInBackground: false,
+    openInBackground: false,
 };
 
 const perso = {
     name: "Brave Browser",
     profile: "Profile 1",
-    // openInBackground: false,
+    openInBackground: false,
 };
 
 const chrome = {
     name: "Google Chrome",
     profile: "Default",
-    // openInBackground: false,
+    openInBackground: false,
 };
 
 const firefox = {
     name: "Firefox",
     profile: "Joris Berthelot",
+    openInBackground: false,
 };
 
 const ape = {
     name: "Firefox",
     profile: "APE",
+    openInBackground: false,
 };
 
-module.exports = {
+/**
+ * @type {FinickyConfig}
+ */
+export default {
     defaultBrowser: work.name,
-    // defaultBrowser: brave.name,
+    options: {
+        // Check for updates. Default: true
+        checkForUpdates: true,
+        // Log every request to file. Default: false
+        logRequests: false,
+    },
     handlers: [
         // Debugging purposes
-        {
-            match(all) {
-                finicky.log(JSON.stringify(all, null, 2));
-                return false
-            },
-            browser: null
-        },
+        // {
+        //     match(url, options) {
+        //         console.log(JSON.stringify(url, null, 2));
+        //         console.log(JSON.stringify(options, null, 2));
+        //         return false
+        //     },
+        //     browser: null
+        // },
         {
             // Apps that should open links in my professional browser profile
-            match: ({ opener }) => opener.path && pathChecker([
+            match: (options) => pathChecker([
                 "Slack",
                 "Gmail",
                 "Google Calendar",
                 "Beepkeeper Studio",
                 "Notion",
                 "Figma",
-                "Microsoft Teams"
-            ], opener.path),
+                "Microsoft Teams",
+                "Visual Studio Code"
+            ], options),
             browser: work
         },
         // Picard uses osascripts to initiate link opening
@@ -85,7 +107,7 @@ module.exports = {
         },
         {
             // Apps that should open links in my personal browser profile
-            match: ({ opener }) => opener.path && pathChecker([
+            match: (options) => pathChecker([
                 "Arq",
                 "Messages",
                 "Discord",
@@ -105,15 +127,15 @@ module.exports = {
                 "iBroadcast",
                 "Bitwarden",
                 "WhatsApp",
-            ], opener.path),
+            ], options),
             browser: perso
         },
-        {
-            // Apps that should open links in my personal browser profile
-            match: ({ opener }) => opener.path && pathChecker([
-                "Discord",
-            ], opener.path),
-            browser: ape
-        },
+        // {
+        //     // Apps that should open links in my personal browser profile
+        //     match: ({ opener }) => opener.path && pathChecker([
+        //         "Discord",
+        //     ], opener.path),
+        //     browser: ape
+        // },
     ]
 }
