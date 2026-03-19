@@ -1,0 +1,41 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# Shell scripts
+[*.{sh,zsh}]
+indent_size = 4
+
+# Bin scripts (no extension)
+[bin/*]
+indent_size = 4
+
+# Ruby (Brewfile)
+[Brewfile]
+indent_size = 2
+
+# JSON
+[*.json]
+indent_size = 2
+
+# JavaScript
+[*.js]
+indent_size = 2
+
+# Markdown — preserve trailing spaces (line breaks)
+[*.md]
+trim_trailing_whitespace = false
+
+# Plists — XML, 4-space indent
+[*.plist]
+indent_size = 4
+
+# Git config / ini-style symlinks
+[*.symlink]
+indent_style = tab
