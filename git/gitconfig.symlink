@@ -41,7 +41,6 @@
         sb = status --short --branch
         #############
         sa = stash apply
-        sc = stash clear
         sl = stash list
         sp = stash pop
         ss = stash save
@@ -59,7 +58,7 @@
         co = checkout
         cob = checkout -b
         cop = checkout --patch
-        com = checkout master
+        com = "!git checkout master || git checkout main || git checkout develop"
         #############
         b = branch
         ba = branch --all
@@ -70,7 +69,7 @@
         cpn = cherry-pick --no-commit
         cpe = cherry-pick --edit
         #############
-        l = log --oneline -20
+        l = log --oneline -10
         lg = log --pretty=format:'%C(cyan)%h%Creset %cr | %s%d [%C(yellow)%an%Creset]' --graph --abbrev-commit --date=relative -n50
         #############
         d = diff
