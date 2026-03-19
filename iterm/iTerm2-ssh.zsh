@@ -1,4 +1,8 @@
 
+# iTerm2 SSH color-switching — only active inside iTerm2.
+
+[[ -n "$ITERM_SESSION_ID" ]] || return 0
+
 function tabc() {
   NAME=${1:-eexit}
   # if you have trouble with this, change
@@ -13,13 +17,9 @@ function tab-reset() {
 }
 
 function colorssh() {
-    if [[ -n "$ITERM_SESSION_ID" ]]; then
-        trap "tab-reset" INT EXIT
-        #if [[ "$*" =~ ".*" ]]; then
-            tabc ssh
-        #fi
-    fi
-    ssh $*
+    trap "tab-reset" INT EXIT
+    tabc ssh
+    command ssh $*
 }
 
 # compdef _ssh tabc=ssh
