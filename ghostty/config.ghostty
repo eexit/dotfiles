@@ -1,0 +1,78 @@
+# Ghostty config — translated from iTerm2 profile "eexit"
+
+macos-icon = retro
+
+# ── Font ──────────────────────────────────────────────────────────────────────
+font-family = SauceCodePro Nerd Font Mono
+font-style = SemiBold
+font-style-bold = SemiBold
+font-size = 20
+
+# Ligatures disabled (ASCII Ligatures = false)
+font-feature = -liga
+font-feature = -calt
+
+# ── Window ────────────────────────────────────────────────────────────────────
+window-width = 130
+window-height = 38
+window-padding-x = 15
+window-padding-y = 15
+
+# Quit when the last window is closed
+quit-after-last-window-closed = true
+
+# Inherit working directory for new tabs/panes (AWDS "Recycle")
+window-inherit-working-directory = true
+
+# ── Transparency ──────────────────────────────────────────────────────────────
+background-opacity = 0.975
+background-blur-radius = 20
+
+# ── Cursor ────────────────────────────────────────────────────────────────────
+# Cursor Type 2 = Underline; Blinking Cursor = true
+cursor-style = block
+cursor-style-blink = true
+shell-integration-features = no-cursor
+
+# ── Scrollback ────────────────────────────────────────────────────────────────
+# Unlimited Scrollback = true
+scrollback-limit = 100000
+
+# ── Terminal ──────────────────────────────────────────────────────────────────
+term = xterm-256color
+copy-on-select = clipboard
+
+# ── Colors ────────────────────────────────────────────────────────────────────
+background        = #273239
+foreground        = #e8ebed
+cursor-color      = #eaeaea
+selection-background = #546977
+selection-foreground = #e8ebed
+
+# ANSI palette (0–7 normal, 8–15 bright)
+palette = 0=#485a65
+palette = 1=#e84b4a
+palette = 2=#88eea5
+palette = 3=#f7d256
+palette = 4=#5fb4f8
+palette = 5=#e73e6f
+palette = 6=#8bfcd4
+palette = 7=#ffffff
+palette = 8=#a4b0b7
+palette = 9=#eb7c72
+palette = 10=#bdf5c3
+palette = 11=#fae27e
+palette = 12=#87ccfa
+palette = 13=#ea709a
+palette = 14=#b1fce7
+palette = 15=#ffffff
+
+# Use bright color variants for bold text (Use Bright Bold = true)
+bold-is-bright = true
+# Explicit bold color (Bold Color from iTerm profile)
+bold-color = #eaeaea
+
+# ── Keybindings ───────────────────────────────────────────────────────────────
+# Cycle tabs (mirrors iTerm2 option+cmd+left/right)
+keybind = opt+super+left=previous_tab
+keybind = opt+super+right=next_tab
