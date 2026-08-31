@@ -1,6 +1,6 @@
 # Ghostty config — translated from iTerm2 profile "eexit"
 
-macos-icon = retro
+macos-icon = holographic
 
 # ── Font ──────────────────────────────────────────────────────────────────────
 font-family = SauceCodePro Nerd Font Mono
@@ -35,8 +35,8 @@ cursor-style-blink = true
 shell-integration-features = no-cursor
 
 # ── Scrollback ────────────────────────────────────────────────────────────────
-# Unlimited Scrollback = true
-scrollback-limit = 100000
+# Increase scrollback to 100MB (roughly 200,000 to 500,000 lines)
+scrollback-limit = 100_000_000
 
 # ── Terminal ──────────────────────────────────────────────────────────────────
 term = xterm-256color
