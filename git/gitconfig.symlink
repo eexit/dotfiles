@@ -1,147 +1,148 @@
 # Local/private config goes in the include
 [include]
-        path = ~/.gitconfig.local
+  path = ~/.gitconfig.local
 [hub]
-        protocol = https
+  protocol = https
 [alias] # Thanks to https://gist.github.com/pksunkara/988716
-        a = add
-        au = add --update
-        ai = add --interactive
-        aui = add --update --interactive
-        ap = add --patch
-        aup = add --update --patch
-        #############
-        f = fetch
-        fp = fetch --prune
-        fpt = fetch --prune origin +refs/tags/*:refs/tags/*
-        fo = fetch origin
-        fu = fetch upstream
-        #############
-        ps = push
-        psf = push --force-with-lease
-        psff = push --force
-        psu = push --set-upstream
-        pso = push origin
-        psfo = push --force-with-lease origin
-        psffo = push --force origin
-        psuo = push --set-upstream origin
-        #############
-        pl = pull
-        pb = pull --rebase
-        pbo = pull --rebase origin
-        pbu = pull --rebase upstream
-        #############
-        rb = rebase
-        rba = rebase --abort
-        rbc = rebase --continue
-        rbi = rebase --interactive
-        rbs = rebase --skip
-        #############
-        s = status
-        sb = status --short --branch
-        #############
-        sa = stash apply
-        sl = stash list
-        sp = stash pop
-        ss = stash save
-        sw = stash show
-        swn = "!f() { git stash show stash@{$1} --patch; }; f"
-        san = "!f() { git stash apply stash@{$1}; }; f"
-        #############
-        c = commit
-        ca = commit --all
-        cm = commit --message
-        cam = commit --all --message
-        cd = commit --amend
-        cde = commit --amend --no-edit
-        #############
-        co = checkout
-        cob = checkout -b
-        cop = checkout --patch
-        com = "!git checkout master || git checkout main || git checkout develop"
-        #############
-        b = branch
-        ba = branch --all
-        bd = branch --delete
-        br = branch --remotes
-        #############
-        cp = cherry-pick
-        cpn = cherry-pick --no-commit
-        cpe = cherry-pick --edit
-        #############
-        l = log --oneline -10
-        lg = log --pretty=format:'%C(cyan)%h%Creset %cr | %s%d [%C(yellow)%an%Creset]' --graph --abbrev-commit --date=relative -n50
-        #############
-        d = diff
-        dw = diff --color-words=. -w
-        dc = diff --cached
-        dp = "!git diff $1 | /usr/bin/pbcopy"
-        #############
-        ls = ls-files
-        lsf = "!git ls-files | grep -i"
-        #############
-        unstage = reset HEAD --
-        undo = reset HEAD~1
-        aliases = config --get-regexp alias
-        promote = !$ZSH/bin/git-promote
-        wtf = !$ZSH/bin/git-wtf
-        rank-contributors = !$ZSH/bin/git-rank-contributors
-        count = !git shortlog --summary --numbered
-        cbn = copy-branch-name
-        t = !sh -c 'git tag $1 && git push origin $1' -
-        deltag = !sh -c 'git tag --delete $1 && git push origin :refs/tags/$1' -
-        cleanup = "!f() { git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done; }; f"
+  a = add
+  au = add --update
+  ai = add --interactive
+  aui = add --update --interactive
+  ap = add --patch
+  aup = add --update --patch
+  #############
+  f = fetch
+  fp = fetch --prune
+  fpt = fetch --prune origin +refs/tags/*:refs/tags/*
+  fo = fetch origin
+  fu = fetch upstream
+  #############
+  ps = push
+  psf = push --force-with-lease
+  psff = push --force
+  psu = push --set-upstream
+  pso = push origin
+  psfo = push --force-with-lease origin
+  psffo = push --force origin
+  psuo = push --set-upstream origin
+  #############
+  pl = pull
+  pb = pull --rebase
+  pbo = pull --rebase origin
+  pbu = pull --rebase upstream
+  #############
+  rb = rebase
+  rba = rebase --abort
+  rbc = rebase --continue
+  rbi = rebase --interactive
+  rbs = rebase --skip
+  #############
+  s = status
+  sb = status --short --branch
+  #############
+  sa = stash apply
+  sl = stash list
+  sp = stash pop
+  ss = stash save
+  sw = stash show
+  swn = "!f() { git stash show stash@{$1} --patch; }; f"
+  san = "!f() { git stash apply stash@{$1}; }; f"
+  #############
+  c = commit
+  ca = commit --all
+  cm = commit --message
+  cam = commit --all --message
+  cd = commit --amend
+  cde = commit --amend --no-edit
+  #############
+  co = checkout
+  cob = checkout -b
+  cop = checkout --patch
+  com = "!git checkout master || git checkout main || git checkout develop"
+  #############
+  b = branch
+  ba = branch --all
+  bd = branch --delete
+  br = branch --remotes
+  #############
+  cp = cherry-pick
+  cpn = cherry-pick --no-commit
+  cpe = cherry-pick --edit
+  #############
+  l = log --oneline -10
+  lg = log --pretty=format:'%C(cyan)%h%Creset %cr | %s%d [%C(yellow)%an%Creset]' --graph --abbrev-commit --date=relative -n50
+  #############
+  d = diff
+  dw = diff --color-words=. -w
+  dc = diff --cached
+  dp = "!git diff $1 | /usr/bin/pbcopy"
+  #############
+  ls = ls-files
+  lsf = "!git ls-files | grep -i"
+  #############
+  unstage = reset HEAD --
+  undo = reset HEAD~1
+  aliases = config --get-regexp alias
+  promote = !$ZSH/bin/git-promote
+  wtf = !$ZSH/bin/git-wtf
+  rank-contributors = !$ZSH/bin/git-rank-contributors
+  count = !git shortlog --summary --numbered
+  cbn = copy-branch-name
+  t = !sh -c 'git tag $1 && git push origin $1' -
+  deltag = !sh -c 'git tag --delete $1 && git push origin :refs/tags/$1' -
+  cleanup = "!f() { git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done; }; f"
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
-        interactive = auto
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
+  interactive = auto
 [color "branch"]
-        current = green bold
-        local = yellow bold
-        remote = red bold
+  current = green bold
+  local = yellow bold
+  remote = red bold
 [color "diff"]
-        meta = yellow bold
-        frag = magenta bold
-        old = red bold
-        new = green bold
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
 [color "status"]
-        added = green bold
-        changed = yellow bold
-        unmerged = red bold
-        untracked = magenta bold
+  added = green bold
+  changed = yellow bold
+  unmerged = red bold
+  untracked = magenta bold
 [core]
-        excludesfile = ~/.gitignore
-        safecrlf = true
-        autocrlf = input
-        editor = vim
-        ; gitProxy="ssh" for "github.com"
-        ; gitProxy=default-proxy ; for the rest
-        pager = less -r
+  excludesfile = ~/.gitignore
+  safecrlf = true
+  autocrlf = input
+  ignorecase = false
+  editor = vim
+  ; gitProxy="ssh" for "github.com"
+  ; gitProxy=default-proxy ; for the rest
+  pager = less -r
 [apply]
-        whitespace = nowarn
+  whitespace = nowarn
 [mergetool]
-        keepBackup = false
+  keepBackup = false
 [merge]
-        tool = opendiff
+  tool = opendiff
 [difftool]
-        prompt = false
+  prompt = false
 [help]
-        autocorrect = 1
+  autocorrect = 1
 [push]
-        default = current
+  default = current
 [pull]
-        default = current
-        rebase = false
+  default = current
+  rebase = false
 [receive]
-        denyDeleteCurrent = warn
+  denyDeleteCurrent = warn
 [url "git@github.com:"]
-        insteadOf = https://github.com/
+  insteadOf = https://github.com/
 [filter "lfs"]
-        clean = git-lfs clean -- %f
-        smudge = git-lfs smudge -- %f
-        process = git-lfs filter-process
-        required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 [gpg]
-	program = gpg
+  program = gpg
