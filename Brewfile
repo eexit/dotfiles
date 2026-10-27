@@ -39,6 +39,7 @@ brew 'php@8.3', link: true
 brew 'readline'
 brew 'screen'
 brew 'sqlite'
+brew 'starship'
 brew 'thefuck'
 brew 'tidy-html5'
 brew 'tokei'

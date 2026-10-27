@@ -1,0 +1,55 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$cmd_duration\
+$line_break\
+$character"""
+
+[directory]
+style = "blue"
+truncation_symbol = '/'
+# Shows folder depth so you clearly see repo-name/branch-name
+truncation_length = 3
+truncate_to_repo = false
+
+[character]
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
+
+[git_branch]
+format = "[$branch( $symbol $remote_branch)]($style)"
+style = "bright-black"
+symbol = ''
+ignore_bare_repo = true
+always_show_remote = true
+
+[git_status]
+format = " [[(*$conflicted$untracked$modified$staged$renamed$deleted)](218)($ahead_behind$stashed)]($style) "
+style = "cyan"
+conflicted = "​"
+diverged = "󰹹"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "≡"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "yellow"
+
+[package]
+disabled = true

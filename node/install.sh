@@ -1,7 +1,7 @@
 #!/bin/zsh
 set -e
 
-packages=(spoof tldr emoj pure-prompt)
+packages=(spoof tldr emoj)
 
 for cmd in "${packages[@]}"
 do
