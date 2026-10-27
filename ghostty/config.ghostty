@@ -76,3 +76,8 @@ bold-color = #eaeaea
 # Cycle tabs (mirrors iTerm2 option+cmd+left/right)
 keybind = opt+super+left=previous_tab
 keybind = opt+super+right=next_tab
+
+# Copy/paste with search fix
+# https://github.com/ghostty-org/ghostty/issues/10749#issuecomment-4825942622
+keybind = super+v=paste_from_clipboard
+keybind = super+c=copy_to_clipboard
