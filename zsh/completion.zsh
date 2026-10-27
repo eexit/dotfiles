@@ -38,3 +38,9 @@ then
     # fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
     fpath=("$(brew --prefix)/share/zsh-completions" $fpath)
 fi
+
+# carapace must init after compinit, it hooks in via compdef
+if (( $+commands[carapace] ))
+then
+    source <(carapace _carapace zsh)
+fi
