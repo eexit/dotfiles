@@ -1,5 +1,20 @@
-#!/bin/sh
+#!/bin/zsh
+# histrm - Remove matching entries from zsh history
+#
+# Usage:
+#   histrm <pattern>
+#
+# Arguments:
+#   pattern  A string or basic regex to match against history lines.
+#            All matching lines will be permanently deleted from $HISTFILE.
+#
+# Examples:
+#   histrm "my_secret_password"
+#   histrm "aws .* --secret"
 
 histrm () {
-    fc -AI; LC_ALL=C sed --in-place '/$1/d' $HISTFILE
+    local histfile="${HISTFILE:-$HOME/.zsh_history}"
+    [[ -z "$1" ]] && { echo "Usage: histrm <pattern>"; return 1; }
+    fc -AI
+    LC_ALL=C sed -E -i '' -e "/$1/d" "$histfile"
 }
