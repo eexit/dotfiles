@@ -54,11 +54,13 @@
   cam = commit --all --message
   cd = commit --amend
   cde = commit --amend --no-edit
+  cf = "!f() { commit=\"${1:-}\"; if [ -z \"$commit\" ]; then commit=$(git log --oneline -E --grep=\"^(fixup|squash)!\" --invert-grep -n 10 | fzf --height 40% --reverse | awk '{print $1}'); fi; [ -n \"$commit\" ] && git commit --fixup=\"$commit\"; }; f"
   #############
   co = checkout
   cob = checkout -b
   cop = checkout --patch
   com = "!git checkout master || git checkout main || git checkout develop"
+  pluck = "!f() { branch=\"$1\"; shift; base=$(git merge-base HEAD \"$branch\"); for file in \"$@\"; do if [ ! -f \"$file\" ]; then mkdir -p \"$(dirname \"$file\")\"; git show \"$branch:$file\" > \"$file\" 2>/dev/null; else tmp_base=$(mktemp); tmp_branch=$(mktemp); git show \"$base:$file\" > \"$tmp_base\" 2>/dev/null; git show \"$branch:$file\" > \"$tmp_branch\" 2>/dev/null; git merge-file \"$file\" \"$tmp_base\" \"$tmp_branch\"; rm -f \"$tmp_base\" \"$tmp_branch\"; fi; done; }; f"
   #############
   b = branch
   ba = branch --all
