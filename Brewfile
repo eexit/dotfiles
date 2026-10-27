@@ -10,6 +10,7 @@ brew 'composer', args: ['ignore-dependencies']
 brew 'coreutils'
 brew 'dos2unix'
 brew 'flyctl'
+brew 'fzf'
 brew 'gawk'
 brew 'git-lfs'
 brew 'git-who'

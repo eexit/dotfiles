@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 0 ]]; then
+    echo "Usage: nf <search_term>"
+    exit 1
+fi
+
+cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/nerdfonts"
+cache_file="$cache_dir/glyphnames.json"
+
+# Download and cache glyphnames if not already cached
+if [[ ! -f "$cache_file" ]]; then
+mkdir -p "$cache_dir"
+echo "Downloading Nerd Fonts glyph catalog..."
+curl -sS "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/glyphnames.json" -o "$cache_file"
+fi
+
+# Interactive search with fzf
+selected=$(jq -r 'to_entries[] | "\(.value.char)  \(.key)"' "$cache_file" | fzf --exact --ignore-case --query="$1")
+
+if [[ -n "$selected" ]]; then
+glyph=$(echo "$selected" | awk '{print $1}')
+
+# Copy to clipboard based on OS
+if command -v pbcopy &>/dev/null; then
+    echo -n "$glyph" | pbcopy
+elif command -v xclip &>/devnull; then
+    echo -n "$glyph" | xclip -selection clipboard
+elif command -v wl-copy &>/devnull; then
+    echo -n "$glyph" | wl-copy
+fi
+
+echo "Copied $glyph to clipboard."
+fi
