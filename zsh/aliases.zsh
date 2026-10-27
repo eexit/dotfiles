@@ -42,5 +42,5 @@ alias list-instances="aws ec2 describe-instances \
 --query \"Reservations[*].Instances[*].[PrivateIpAddress, Tags[?Key=='Name'].Value|[0]]\" \
 --output text"
 
-alias cc="$(which rm) -rf ./php/var/* ./tools/phpstan/(cache|vendor|composer.lock) ./tools/php-cs-fixer/(cache|vendor|composer.lock) ./.php-cs-fixer.cache ./.prettier.cache ./(front-react|front)/node_modules ||:"
+alias raz="$(which rm) -rf ./php/var/* ./tools/phpstan/(cache|vendor|composer.lock) ./tools/php-cs-fixer/(cache|vendor|composer.lock) ./.php-cs-fixer.cache ./.prettier.cache ||:"
 alias reinstall-tools="find tools/php* \( -name vendor -or -name composer.lock \) -exec rm -rf {} + && composer i -d tools/phpstan && composer i -d tools/php-cs-fixer"
